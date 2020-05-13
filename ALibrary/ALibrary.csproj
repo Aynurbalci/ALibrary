@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5CF5D23-819A-4A94-8ADD-66E812710765}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ALibrary</RootNamespace>
+    <AssemblyName>ALibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookSystem.Designer.cs">
+      <DependentUpon>BookSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeUsername.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeUsername.Designer.cs">
+      <DependentUpon>ChangeUsername.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cryptology.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibrarySystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibrarySystem.Designer.cs">
+      <DependentUpon>LibrarySystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Helper.cs" />
+    <Compile Include="Model\UserLibraryDAO.cs" />
+    <Compile Include="Model\UserSignUpDAO.cs" />
+    <Compile Include="PasswordUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordUpdate.Designer.cs">
+      <DependentUpon>PasswordUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BookSystem.resx">
+      <DependentUpon>BookSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeUsername.resx">
+      <DependentUpon>ChangeUsername.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibrarySystem.resx">
+      <DependentUpon>LibrarySystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordUpdate.resx">
+      <DependentUpon>PasswordUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-nutuk-atatrk-sileti-ankara-republic-day-silhou-mustafa-kemal-ataturk-5b2629bc02f2c4.1420373115292277080121.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Books-2-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text-Effect-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\misir-uygarligi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2020-05-10 at 00.03.24.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\189px-Zonaro_GatesofConst.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin-privilege-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\misir-uygarligi1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-user-group-new-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sci-fi-atmosphere.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-974328444780d68ffa59a9628c7f78bb7ec589f8.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
