@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Globalization;
 using ALibrary.Model;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace ALibrary
 {
@@ -30,7 +31,7 @@ namespace ALibrary
 
         private void FillAllUserSigns()
         {
-            UserSignUpDAO userSignUpDAO = new UserSignUpDAO();
+            UserDAO userSignUpDAO = new UserDAO();
             dataGridView_SignUp.DataSource = userSignUpDAO.GetAllUserSignUp();
         }
 
@@ -39,7 +40,7 @@ namespace ALibrary
         {
             #region
             //buton>>property(enable,visible,text)
-            button_SignUp.Enabled = true;
+            button_SignUp.Enabled = false;
             button_SignUp.Visible = true;
             button_SignUp.Text = "Sign Up";
             //CheckBox>>property(checked,text)
@@ -50,6 +51,7 @@ namespace ALibrary
             //CheckedListBox>>Property(sorted,selectionmode)
             checkedListBox_BookTypes.Sorted = false;
             checkedListBox_BookTypes.SelectionMode = SelectionMode.One;
+            checkedListBox_BookTypes.SelectedValue = 1;
             //Combobox>>property(sorted,dropdownstyle,flatstyle,items)
             comboBox_EducationStatus.Sorted = false;
             comboBox_EducationStatus.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -110,9 +112,9 @@ namespace ALibrary
             radioButton_Women.Checked = false;
             radioButton_Man.Checked = false;
             //Textbox>>(contextmenustrip,multiline,font)
-            textBox_UserNames.ContextMenuStrip = contextMenuStrip1;
-            textBox_UserNames.Multiline = true;
-            textBox_UserNames.Font = new Font("Verdana", 7.875F, ((FontStyle)((FontStyle.Bold | FontStyle.Italic))), GraphicsUnit.Point, ((byte)(162)));
+            textBox_FirstName.ContextMenuStrip = contextMenuStrip1;
+            textBox_FirstName.Multiline = true;
+            textBox_FirstName.Font = new Font("Verdana", 7.875F, ((FontStyle)((FontStyle.Bold | FontStyle.Italic))), GraphicsUnit.Point, ((byte)(162)));
             //ToolTip>>property(IsBaloon,ToolTiplcon,ToolTipTitle)
             toolTip1.IsBalloon = false;
             toolTip1.ToolTipIcon = ToolTipIcon.Warning;
@@ -138,32 +140,84 @@ namespace ALibrary
             #endregion
             //FinalExamProperties
         }
-
-
-        private void CallConnection()
+        //FinalExamEvents
+        #region
+        //buton>>event(EnableChanged,VisibleChanged,Click,MouseHover)
+        #region
+        private void button_SignUp_EnabledChanged(object sender, EventArgs e)
         {
+            button_SignUp.Enabled = true; //Enable özelliğinin değiştirilmesi durumunda bu parametre çalışır.
+           
+        }
+        private void button_SignUp_VisibleChanged(object sender, EventArgs e)
+        {
+            button_SignUp.BackColor=Color.Red;//Visible özelliği değiştirilince çalışır.
+        }
+        private void button_SignUp_Click(object sender, EventArgs e)
+        {
+            SignUpSignIn(); //button_SignUp_Click e basınca gerçekleşmesini istediğimiz olayları yazmamızı sağlar.
 
         }
+        private void button_SignUp_MouseHover(object sender, EventArgs e)
+        {
+            button_SignUp.BackColor = Color.Cornsilk;//Mause butonun üzerine gelince çalışır.
+        }
+        #endregion
+        //CheckBox>>event(CheckedChanged)
+        #region
+        private void checkBox_Married_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox_Married.BackColor = Color.Red; //checked değerinin özelliği değiştiğinde kullanılır.
+        }
+
+        private void checkBox_Single_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox_Single.BackColor = Color.Cyan;//checked değerinin özelliği değiştiğinde kullanılır.
+        }
+        #endregion
+        //CheckedListBox>>events(itemcheck, selectedvaluechanged)
+        #region
+        private void checkedListBox_BookTypes_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            checkedListBox_BookTypes.BackColor = Color.Yellow;//checkedlistboxda Bir öğenin seçili olması durumunda gerçekleşir. 
+        }
+        private void checkedListBox_BookTypes_SelectedValueChanged(object sender, EventArgs e)
+        {
+                checkedListBox_BookTypes.BackColor = Color.White;//SelectedValue özelliği değiştiğinde gerçekleşir.
+
+        }
+        #endregion
+        //Combobox>>events(selectedindexchanged, mousedoubleclick)
+        private void comboBox_EducationStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox_EducationStatus.BackColor = Color.Azure;
+        }
+        private void comboBox_EducationStatus_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            comboBox_EducationStatus.BackColor = Color.DarkRed;
+        }
+        #region
+        #endregion
+        //DatetimePicker>>events(ValueChanged)
+
+        #endregion
+
         private void SignUpSignIn()
         {
             SignUpInsert();
             FillAllUserSigns();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SignUpSignIn();
-        }
-
+        
         private void SignUpInsert()
         {
 
             try
             {
 
-                UserSignUpDAO userSignUpDAO = new UserSignUpDAO();
-                userSignUpDAO.UserNames = textBox_UserNames.Text;
-                userSignUpDAO.UserSurname = textBox_UserSurname.Text;
+                UserDAO userSignUpDAO = new UserDAO();
+                userSignUpDAO.UserName = textBox_UserName.Text;
+                userSignUpDAO.Password = textBox_Password.Text;
                 userSignUpDAO.Gender = "Women";
 
                 if (radioButton_Man.Checked)
@@ -175,7 +229,7 @@ namespace ALibrary
                     userSignUpDAO.Gender = "Women";
                 }
 
-                userSignUpDAO.DateOfBirth = dateTimePicker_DateOfBirth.Value;
+                userSignUpDAO.DateOfBirth =GetDate();
                 userSignUpDAO.EducationStatus = comboBox_EducationStatus.Text;
                 userSignUpDAO.MaritalStatus = "Single";
                 if (checkBox_Married.Checked)
@@ -186,15 +240,15 @@ namespace ALibrary
                 {
                     userSignUpDAO.MaritalStatus = "Single";
                 }
+                //DATA ACCESS OBJECT
                 userSignUpDAO.BookTypes = checkedListBox_BookTypes.Text;
                 userSignUpDAO.IdentificationNumber = maskedTextBox_IdentificationNumber.Text;
-                userSignUpDAO.HowManyBooks = (int)numericUpDown_BookNumber.Value;
                 userSignUpDAO.Address = textBox_Address.Text;
-                userSignUpDAO.AddressType = listBox_AddressType.SelectedItem.ToString();
-                userSignUpDAO.LoginUsername = textBox_LoginUserName.Text;
-                userSignUpDAO.Gmails = textBox_Gmail.Text;
-                userSignUpDAO.PhoneNumber = (maskedTextBox_PhoneNumber.Text);
-
+                userSignUpDAO.AddressType = GetAdressType();
+                userSignUpDAO.Gmail = textBox_Gmail.Text;
+                userSignUpDAO.MobilePhone = (maskedTextBox_PhoneNumber.Text);
+                userSignUpDAO.FirstName = textBox_FirstName.Text;
+                userSignUpDAO.LastName = textBox_LastName.Text;
 
                 List<String> errors = userSignUpDAO.GetErrors();
                 if (!errors.Any())
@@ -213,12 +267,32 @@ namespace ALibrary
                 MessageBox.Show(ex.Message);
             }
 
-
         }
 
+        private string GetAdressType()
+        {
+            try
+            {
+                return listBox_AddressType.SelectedItem.ToString();
+            }
+            catch (Exception)
+            {
 
+                return "";
+            }
+        }
 
+        private DateTime GetDate()
+        {
+            try
+            {
+                return dateTimePicker_DateOfBirth.Value;            }
+            catch (Exception)
+            {
 
+                return DateTime.Now;
+            }
+        }
 
 
 
@@ -235,20 +309,20 @@ namespace ALibrary
             {
                 int rowIndex = e.RowIndex;
                 DataGridViewRow row = dataGridView_SignUp.Rows[rowIndex];
-                textBox_UserNames.Text = row.Cells["UserNames"].ToString();
-                textBox_UserSurname.Text = row.Cells["UserSurname"].ToString();
+                textBox_FirstName.Text = row.Cells["UserName"].ToString();
+                textBox_Password.Text = row.Cells["Password"].ToString();
 
                 dateTimePicker_DateOfBirth.Value = Convert.ToDateTime(row.Cells["DateOfBirth"].ToString());
                 comboBox_EducationStatus.Text = row.Cells["EducationStatus"].ToString();
 
-                checkedListBox_BookTypes.Text = row.Cells["BookTypes"].ToString();
+                checkedListBox_BookTypes.Text = row.Cells["BookType"].ToString();
                 maskedTextBox_IdentificationNumber.Text = row.Cells["IdentificationNumber"].ToString();
-                numericUpDown_BookNumber.Value = int.Parse(row.Cells["HowManyBooks"].ToString());
+                textBox_FirstName.Text= (row.Cells["FirstName"].ToString());
                 textBox_Address.Text = row.Cells["Address"].ToString();
                 listBox_AddressType.Text = row.Cells["AddressType"].ToString();
-                textBox_LoginUserName.Text = row.Cells["LoginUsername"].ToString();
+                textBox_LastName.Text = row.Cells["LastName"].ToString();
                 textBox_Gmail.Text = row.Cells["Gmail"].ToString();
-                maskedTextBox_PhoneNumber.Text = row.Cells["PhoneNumber"].ToString();
+                maskedTextBox_PhoneNumber.Text = row.Cells["MobilePhone"].ToString();
 
 
             }
@@ -259,8 +333,6 @@ namespace ALibrary
             }
         }
 
-
-
-
+      
     }
 }

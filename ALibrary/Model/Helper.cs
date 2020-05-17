@@ -10,7 +10,7 @@ namespace ALibrary.Model
 {
    public class Helper
     {
-        public static readonly string ConnectionKey = "server=(localdb)\\mssqllocaldb;Database=User;Integrated security = true";
+        public static readonly string ConnectionKey = "server=(localdb)\\mssqllocaldb;Database=AynurLibraryDb;Integrated security = true";
 
         public static  bool AynurIsStringEmpty(string a)
         {

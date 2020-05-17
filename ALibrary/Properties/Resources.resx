@@ -118,29 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="admin-privilege-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\admin-privilege-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Peters-Sword-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Peters-Sword-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="misir-uygarligi1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\misir-uygarligi1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="crop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Books-2-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Books-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="social-facebook-button-blue-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\social-facebook-button-blue-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kisspng-nutuk-atatrk-sileti-ankara-republic-day-silhou-mustafa-kemal-ataturk-5b2629bc02f2c4.1420373115292277080121" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kisspng-nutuk-atatrk-sileti-ankara-republic-day-silhou-mustafa-kemal-ataturk-5b2629bc02f2c4.1420373115292277080121.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="f_9OkjLek4Qjyy9NxIZ5XchlVF4@400x346" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\f_9OkjLek4Qjyy9NxIZ5XchlVF4@400x346.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="unnamed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unnamed.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="2a60cc_7f795af45a054271bff198c4a81d9145" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2a60cc_7f795af45a054271bff198c4a81d9145.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="f_9OkjLek4Qjyy9NxIZ5XchlVF4@400x3461" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\f_9OkjLek4Qjyy9NxIZ5XchlVF4@400x3461.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="misir-uygarligi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\misir-uygarligi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="olen-esi-icin-diktigi-6-bin-agacin-sirri-17-yil-709112_7493_5_b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\olen-esi-icin-diktigi-6-bin-agacin-sirri-17-yil-709112_7493_5_b.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="189px-Zonaro_GatesofConst" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\189px-Zonaro_GatesofConst.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="orig_photo378804_5120748" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orig_photo378804_5120748.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="social-facebook-button-blue-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\social-facebook-button-blue-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WhatsApp Image 2020-05-10 at 00.03.24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2020-05-10 at 00.03.24.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,25 +151,124 @@
   <data name="Actions-user-group-new-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-user-group-new-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="unnamed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unnamed1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="62963-crossed-swords-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\62963-crossed-swords-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Text-Effect-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Text-Effect-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="poetry_comp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\poetry_comp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="62963-crossed-swords-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\62963-crossed-swords-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kisspng-nutuk-atatrk-sileti-ankara-republic-day-silhou-mustafa-kemal-ataturk-5b2629bc02f2c4.1420373115292277080121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-nutuk-atatrk-sileti-ankara-republic-day-silhou-mustafa-kemal-ataturk-5b2629bc02f2c4.1420373115292277080121.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sci-fi-atmosphere" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sci-fi-atmosphere.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="misir-uygarligi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\misir-uygarligi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unnamed (2)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unnamed (2)2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="misir-uygarligi1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\misir-uygarligi1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unnamed2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Open-folder-add-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Open-folder-add-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unnamed (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unnamed (2)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="e0e96dd47c7b17d3e7bbb621f49d9db21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e0e96dd47c7b17d3e7bbb621f49d9db21.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unnamed (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unnamed (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (1)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sci-fi-atmosphere" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sci-fi-atmosphere.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin-privilege-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin-privilege-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="189px-Zonaro_GatesofConst" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\189px-Zonaro_GatesofConst.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Actions-edit-clear-history-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-edit-clear-history-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Actions-edit-clear-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-edit-clear-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unnamed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unnamed.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Text-Effect-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Text-Effect-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Books-2-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Books-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eski-ansiklopedi ansiklopediler tarih" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eski-ansiklopedi ansiklopediler tarih.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="e0e96dd47c7b17d3e7bbb621f49d9db2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e0e96dd47c7b17d3e7bbb621f49d9db2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Klein Libraries Mission " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Klein Libraries Mission .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arama-yapildikca-agac-diken-arama-motoru" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arama-yapildikca-agac-diken-arama-motoru.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="indir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\indir.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Folder-Add-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Folder-Add-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unnamed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unnamed1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="indir (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\indir (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unnamed (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unnamed (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="s-974328444780d68ffa59a9628c7f78bb7ec589f8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\s-974328444780d68ffa59a9628c7f78bb7ec589f8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="s-29b070dc249a9fa4a75e46006a4117eec4db3997" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\s-29b070dc249a9fa4a75e46006a4117eec4db3997.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yildizlarin-sesi-3-stR6_cover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yildizlarin-sesi-3-stR6_cover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

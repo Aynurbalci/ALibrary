@@ -39,6 +39,7 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.button_Facebook = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_Login
@@ -135,12 +136,20 @@
             this.linkLabel5.TabStop = true;
             this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
+            // button_Facebook
+            // 
+            this.button_Facebook.BackColor = System.Drawing.Color.Transparent;
+            this.button_Facebook.BackgroundImage = global::ALibrary.Properties.Resources.social_facebook_button_blue_icon1;
+            resources.ApplyResources(this.button_Facebook, "button_Facebook");
+            this.button_Facebook.Name = "button_Facebook";
+            this.button_Facebook.UseVisualStyleBackColor = false;            // 
             // SignIn
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ALibrary.Properties.Resources.unnamed1;
+            this.Controls.Add(this.button_Facebook);
             this.Controls.Add(this.linkLabel5);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
@@ -171,5 +180,6 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.Button button_Facebook;
     }
 }

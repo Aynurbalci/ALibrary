@@ -65,15 +65,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LibrarySystem.cs">
+    <Compile Include="LibraryBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibrarySystem.Designer.cs">
-      <DependentUpon>LibrarySystem.cs</DependentUpon>
+    <Compile Include="LibraryBook.Designer.cs">
+      <DependentUpon>LibraryBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\BookDAO.cs" />
     <Compile Include="Model\Helper.cs" />
-    <Compile Include="Model\UserLibraryDAO.cs" />
-    <Compile Include="Model\UserSignUpDAO.cs" />
+    <Compile Include="Model\UserDAO.cs" />
     <Compile Include="PasswordUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,8 +103,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibrarySystem.resx">
-      <DependentUpon>LibrarySystem.cs</DependentUpon>
+    <EmbeddedResource Include="LibraryBook.resx">
+      <DependentUpon>LibraryBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PasswordUpdate.resx">
       <DependentUpon>PasswordUpdate.cs</DependentUpon>
@@ -188,6 +188,108 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\s-974328444780d68ffa59a9628c7f78bb7ec589f8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arama-yapildikca-agac-diken-arama-motoru.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\olen-esi-icin-diktigi-6-bin-agacin-sirri-17-yil-709112_7493_5_b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eski-ansiklopedi ansiklopediler tarih.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poetry_comp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Klein Libraries Mission .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orig_photo378804_5120748.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-facebook-button-blue-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-facebook-button-blue-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\62963-crossed-swords-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %282%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\62963-crossed-swords-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Peters-Sword-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %282%292.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder-Add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f_9OkjLek4Qjyy9NxIZ5XchlVF4%40400x346.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f_9OkjLek4Qjyy9NxIZ5XchlVF4%40400x3461.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-edit-clear-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-edit-clear-history-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open-folder-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-29b070dc249a9fa4a75e46006a4117eec4db3997.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e0e96dd47c7b17d3e7bbb621f49d9db2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2a60cc_7f795af45a054271bff198c4a81d9145.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e0e96dd47c7b17d3e7bbb621f49d9db21.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yildizlarin-sesi-3-stR6_cover.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

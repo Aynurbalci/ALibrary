@@ -36,8 +36,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_UserNames = new System.Windows.Forms.TextBox();
-            this.textBox_UserSurname = new System.Windows.Forms.TextBox();
+            this.textBox_FirstName = new System.Windows.Forms.TextBox();
+            this.textBox_Password = new System.Windows.Forms.TextBox();
             this.textBox_Address = new System.Windows.Forms.TextBox();
             this.radioButton_Women = new System.Windows.Forms.RadioButton();
             this.radioButton_Man = new System.Windows.Forms.RadioButton();
@@ -66,8 +66,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox_PasswordAgain = new System.Windows.Forms.TextBox();
             this.textBox_Gmail = new System.Windows.Forms.TextBox();
-            this.textBox_Password = new System.Windows.Forms.TextBox();
-            this.textBox_LoginUserName = new System.Windows.Forms.TextBox();
+            this.textBox_UserName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -81,6 +80,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textBox_LastName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_BookNumber)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage_UserRegistration.SuspendLayout();
@@ -103,11 +104,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 146);
+            this.label2.Location = new System.Drawing.Point(29, 154);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 25);
+            this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "User Surname";
+            this.label2.Text = "First Name";
             // 
             // label4
             // 
@@ -145,19 +146,19 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Marital Status";
             // 
-            // textBox_UserNames
+            // textBox_FirstName
             // 
-            this.textBox_UserNames.Location = new System.Drawing.Point(251, 45);
-            this.textBox_UserNames.Name = "textBox_UserNames";
-            this.textBox_UserNames.Size = new System.Drawing.Size(310, 31);
-            this.textBox_UserNames.TabIndex = 7;
+            this.textBox_FirstName.Location = new System.Drawing.Point(251, 151);
+            this.textBox_FirstName.Name = "textBox_FirstName";
+            this.textBox_FirstName.Size = new System.Drawing.Size(310, 31);
+            this.textBox_FirstName.TabIndex = 7;
             // 
-            // textBox_UserSurname
+            // textBox_Password
             // 
-            this.textBox_UserSurname.Location = new System.Drawing.Point(251, 146);
-            this.textBox_UserSurname.Name = "textBox_UserSurname";
-            this.textBox_UserSurname.Size = new System.Drawing.Size(310, 31);
-            this.textBox_UserSurname.TabIndex = 8;
+            this.textBox_Password.Location = new System.Drawing.Point(855, 546);
+            this.textBox_Password.Name = "textBox_Password";
+            this.textBox_Password.Size = new System.Drawing.Size(312, 31);
+            this.textBox_Password.TabIndex = 32;
             // 
             // textBox_Address
             // 
@@ -194,6 +195,8 @@
             this.comboBox_EducationStatus.Name = "comboBox_EducationStatus";
             this.comboBox_EducationStatus.Size = new System.Drawing.Size(310, 33);
             this.comboBox_EducationStatus.TabIndex = 13;
+            this.comboBox_EducationStatus.SelectedIndexChanged += new System.EventHandler(this.comboBox_EducationStatus_SelectedIndexChanged);
+            this.comboBox_EducationStatus.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.comboBox_EducationStatus_MouseDoubleClick);
             // 
             // button_SignUp
             // 
@@ -202,8 +205,10 @@
             this.button_SignUp.Size = new System.Drawing.Size(141, 37);
             this.button_SignUp.TabIndex = 14;
             this.button_SignUp.UseVisualStyleBackColor = true;
-            this.button_SignUp.Visible = false;
-            this.button_SignUp.Click += new System.EventHandler(this.button1_Click);
+            this.button_SignUp.EnabledChanged += new System.EventHandler(this.button_SignUp_EnabledChanged);
+            this.button_SignUp.VisibleChanged += new System.EventHandler(this.button_SignUp_VisibleChanged);
+            this.button_SignUp.Click += new System.EventHandler(this.button_SignUp_Click);
+            this.button_SignUp.MouseHover += new System.EventHandler(this.button_SignUp_MouseHover);
             // 
             // checkBox_Married
             // 
@@ -214,6 +219,7 @@
             this.checkBox_Married.TabIndex = 15;
             this.checkBox_Married.Text = "checkBox1";
             this.checkBox_Married.UseVisualStyleBackColor = true;
+            this.checkBox_Married.CheckedChanged += new System.EventHandler(this.checkBox_Married_CheckedChanged);
             // 
             // checkedListBox_BookTypes
             // 
@@ -233,6 +239,8 @@
             this.checkedListBox_BookTypes.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.checkedListBox_BookTypes.Size = new System.Drawing.Size(324, 116);
             this.checkedListBox_BookTypes.TabIndex = 16;
+            this.checkedListBox_BookTypes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox_BookTypes_ItemCheck);
+            this.checkedListBox_BookTypes.SelectedValueChanged += new System.EventHandler(this.checkedListBox_BookTypes_SelectedValueChanged);
             // 
             // dateTimePicker_DateOfBirth
             // 
@@ -319,11 +327,13 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 333);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1473, 885);
+            this.tabControl1.Size = new System.Drawing.Size(1473, 1069);
             this.tabControl1.TabIndex = 25;
             // 
             // tabPage_UserRegistration
             // 
+            this.tabPage_UserRegistration.Controls.Add(this.label1);
+            this.tabPage_UserRegistration.Controls.Add(this.textBox_LastName);
             this.tabPage_UserRegistration.Controls.Add(this.button2);
             this.tabPage_UserRegistration.Controls.Add(this.label11);
             this.tabPage_UserRegistration.Controls.Add(this.maskedTextBox_PhoneNumber);
@@ -335,7 +345,7 @@
             this.tabPage_UserRegistration.Controls.Add(this.textBox_PasswordAgain);
             this.tabPage_UserRegistration.Controls.Add(this.textBox_Gmail);
             this.tabPage_UserRegistration.Controls.Add(this.textBox_Password);
-            this.tabPage_UserRegistration.Controls.Add(this.textBox_LoginUserName);
+            this.tabPage_UserRegistration.Controls.Add(this.textBox_UserName);
             this.tabPage_UserRegistration.Controls.Add(this.label10);
             this.tabPage_UserRegistration.Controls.Add(this.progressBar_Fill);
             this.tabPage_UserRegistration.Controls.Add(this.label9);
@@ -346,11 +356,10 @@
             this.tabPage_UserRegistration.Controls.Add(this.textBox_Address);
             this.tabPage_UserRegistration.Controls.Add(this.listBox_AddressType);
             this.tabPage_UserRegistration.Controls.Add(this.numericUpDown_BookNumber);
-            this.tabPage_UserRegistration.Controls.Add(this.textBox_UserNames);
+            this.tabPage_UserRegistration.Controls.Add(this.textBox_FirstName);
             this.tabPage_UserRegistration.Controls.Add(this.maskedTextBox_IdentificationNumber);
             this.tabPage_UserRegistration.Controls.Add(this.label2);
             this.tabPage_UserRegistration.Controls.Add(this.label8);
-            this.tabPage_UserRegistration.Controls.Add(this.textBox_UserSurname);
             this.tabPage_UserRegistration.Controls.Add(this.label6);
             this.tabPage_UserRegistration.Controls.Add(this.dateTimePicker_DateOfBirth);
             this.tabPage_UserRegistration.Controls.Add(this.checkedListBox_BookTypes);
@@ -362,7 +371,7 @@
             this.tabPage_UserRegistration.Location = new System.Drawing.Point(8, 39);
             this.tabPage_UserRegistration.Name = "tabPage_UserRegistration";
             this.tabPage_UserRegistration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_UserRegistration.Size = new System.Drawing.Size(1457, 838);
+            this.tabPage_UserRegistration.Size = new System.Drawing.Size(1457, 1022);
             this.tabPage_UserRegistration.TabIndex = 0;
             this.tabPage_UserRegistration.UseVisualStyleBackColor = true;
             // 
@@ -425,9 +434,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(653, 410);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(169, 25);
+            this.label13.Size = new System.Drawing.Size(119, 25);
             this.label13.TabIndex = 37;
-            this.label13.Text = "Login Username";
+            this.label13.Text = "User Name";
             // 
             // textBox_PasswordAgain
             // 
@@ -443,19 +452,12 @@
             this.textBox_Gmail.Size = new System.Drawing.Size(312, 31);
             this.textBox_Gmail.TabIndex = 33;
             // 
-            // textBox_Password
+            // textBox_UserName
             // 
-            this.textBox_Password.Location = new System.Drawing.Point(855, 546);
-            this.textBox_Password.Name = "textBox_Password";
-            this.textBox_Password.Size = new System.Drawing.Size(312, 31);
-            this.textBox_Password.TabIndex = 32;
-            // 
-            // textBox_LoginUserName
-            // 
-            this.textBox_LoginUserName.Location = new System.Drawing.Point(855, 404);
-            this.textBox_LoginUserName.Name = "textBox_LoginUserName";
-            this.textBox_LoginUserName.Size = new System.Drawing.Size(312, 31);
-            this.textBox_LoginUserName.TabIndex = 31;
+            this.textBox_UserName.Location = new System.Drawing.Point(855, 404);
+            this.textBox_UserName.Name = "textBox_UserName";
+            this.textBox_UserName.Size = new System.Drawing.Size(312, 31);
+            this.textBox_UserName.TabIndex = 31;
             // 
             // label10
             // 
@@ -493,6 +495,7 @@
             this.checkBox_Single.TabIndex = 27;
             this.checkBox_Single.Text = "checkBox2";
             this.checkBox_Single.UseVisualStyleBackColor = true;
+            this.checkBox_Single.CheckedChanged += new System.EventHandler(this.checkBox_Single_CheckedChanged);
             // 
             // groupBox_Gender
             // 
@@ -564,6 +567,22 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // textBox_LastName
+            // 
+            this.textBox_LastName.Location = new System.Drawing.Point(251, 188);
+            this.textBox_LastName.Name = "textBox_LastName";
+            this.textBox_LastName.Size = new System.Drawing.Size(310, 31);
+            this.textBox_LastName.TabIndex = 44;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 197);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 25);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Last Name";
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -604,8 +623,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox_UserNames;
-        private System.Windows.Forms.TextBox textBox_UserSurname;
+        private System.Windows.Forms.TextBox textBox_FirstName;
         private System.Windows.Forms.TextBox textBox_Address;
         private System.Windows.Forms.RadioButton radioButton_Women;
         private System.Windows.Forms.RadioButton radioButton_Man;
@@ -643,11 +661,13 @@
         private System.Windows.Forms.TextBox textBox_PasswordAgain;
         private System.Windows.Forms.TextBox textBox_Gmail;
         private System.Windows.Forms.TextBox textBox_Password;
-        private System.Windows.Forms.TextBox textBox_LoginUserName;
+        private System.Windows.Forms.TextBox textBox_UserName;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_PhoneNumber;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_LastName;
     }
 }

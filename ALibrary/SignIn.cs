@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ALibrary.Model;
 
 namespace ALibrary
 {
@@ -90,52 +91,23 @@ namespace ALibrary
 
         private void button_Login_Click(object sender, EventArgs e)
         {
-            ConnectionOpen();
-        }
-        bool IsThere;
-
-        public void ConnectionOpen()
-        {
+            UserDAO userDAO = new UserDAO();
             string UserName = textBox_UserName.Text.Trim();
             string Password = textBox_Password.Text.Trim();
-            string Gmail = textBox_UserName.Text.Trim();
+            bool userExist = userDAO.IsUserExist(UserName, Password);       
 
-            connection.Open();
-            SqlCommand sqlCommand = new SqlCommand("Select * from UserLibrary", connection);
-            SqlDataReader reader = sqlCommand.ExecuteReader();
-
-            while (reader.Read())
+            if (userExist)
             {
-                string gmail = reader["Gmail"].ToString().Trim();
-                string usernameDb = reader["UserName"].ToString().Trim();
-                string passowordDb = reader["Password"].ToString().Trim();
-
-                if ((MyEquals(UserName, usernameDb) || MyEquals(Gmail, gmail)) && MyEquals(Password, passowordDb))
-                {
-                    IsThere = true;
-                    break;
-                }
-                else
-                {
-                    IsThere = false;
-                }
-            }
-            connection.Close();
-            if (IsThere)
-            {
-                MessageBox.Show("you have successfully logged in", "Program");
+                LibraryBook librarySystem = new LibraryBook();
+                librarySystem.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Test");
+                MessageBox.Show("User does not exist");
             }
-        }
-        private bool MyEquals(string a, string b)
-        {
-            a = a.Trim();
-            b = b.Trim();
-            return string.Equals(a, b, StringComparison.OrdinalIgnoreCase);
-        }
+
+        }      
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
