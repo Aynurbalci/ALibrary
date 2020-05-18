@@ -11,6 +11,8 @@ namespace ALibrary.Model
    public class Helper
     {
         public static readonly string ConnectionKey = "server=(localdb)\\mssqllocaldb;Database=AynurLibraryDb;Integrated security = true";
+        
+        public static LibraryUser LogginUser { get; set; }
 
         public static  bool AynurIsStringEmpty(string a)
         {

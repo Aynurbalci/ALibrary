@@ -35,7 +35,6 @@
             this.comboBox_Categoryy = new System.Windows.Forms.ComboBox();
             this.comboBox_Languagee = new System.Windows.Forms.ComboBox();
             this.textBox_BookTitlee = new System.Windows.Forms.TextBox();
-            this.button_Search = new System.Windows.Forms.Button();
             this.textBox_AuthorNamee = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox_BarcodeNo = new System.Windows.Forms.TextBox();
@@ -43,14 +42,15 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView_GettingBooks = new System.Windows.Forms.DataGridView();
+            this.button_Search = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.dataGridView_MyBooks = new System.Windows.Forms.DataGridView();
             this.button_Update = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_BarkodNo = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox_BookTitle = new System.Windows.Forms.TextBox();
             this.button_All = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,8 +71,8 @@
             this.dataGridView_BooksInTheLibrary = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox_BarkodNo = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -84,6 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BooksInTheLibrary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -92,11 +94,14 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(-7, 226);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl1.Location = new System.Drawing.Point(0, 355);
+            this.tabControl1.MinimumSize = new System.Drawing.Size(1000, 600);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1482, 1105);
+            this.tabControl1.Size = new System.Drawing.Size(1500, 945);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -104,10 +109,11 @@
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.dataGridView_GettingBooks);
+            this.tabPage1.Controls.Add(this.button_Search);
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1466, 1058);
+            this.tabPage1.Size = new System.Drawing.Size(1484, 898);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Getting Books";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -119,16 +125,16 @@
             this.panel3.Controls.Add(this.comboBox_Categoryy);
             this.panel3.Controls.Add(this.comboBox_Languagee);
             this.panel3.Controls.Add(this.textBox_BookTitlee);
-            this.panel3.Controls.Add(this.button_Search);
             this.panel3.Controls.Add(this.textBox_AuthorNamee);
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.textBox_BarcodeNo);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label19);
-            this.panel3.Location = new System.Drawing.Point(0, 3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(506, 525);
+            this.panel3.Size = new System.Drawing.Size(506, 368);
             this.panel3.TabIndex = 20;
             // 
             // label12
@@ -163,17 +169,6 @@
             this.textBox_BookTitlee.Name = "textBox_BookTitlee";
             this.textBox_BookTitlee.Size = new System.Drawing.Size(224, 24);
             this.textBox_BookTitlee.TabIndex = 16;
-            // 
-            // button_Search
-            // 
-            this.button_Search.BackgroundImage = global::ALibrary.Properties.Resources.Open_folder_add_icon;
-            this.button_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_Search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Search.Location = new System.Drawing.Point(276, 333);
-            this.button_Search.Name = "button_Search";
-            this.button_Search.Size = new System.Drawing.Size(122, 112);
-            this.button_Search.TabIndex = 2;
-            this.button_Search.UseVisualStyleBackColor = true;
             // 
             // textBox_AuthorNamee
             // 
@@ -231,62 +226,48 @@
             // 
             this.dataGridView_GettingBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_GettingBooks.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView_GettingBooks.Location = new System.Drawing.Point(3, 531);
+            this.dataGridView_GettingBooks.Location = new System.Drawing.Point(3, 371);
             this.dataGridView_GettingBooks.Name = "dataGridView_GettingBooks";
             this.dataGridView_GettingBooks.RowHeadersWidth = 82;
             this.dataGridView_GettingBooks.RowTemplate.Height = 33;
-            this.dataGridView_GettingBooks.Size = new System.Drawing.Size(1460, 524);
+            this.dataGridView_GettingBooks.Size = new System.Drawing.Size(1478, 524);
             this.dataGridView_GettingBooks.TabIndex = 1;
+            // 
+            // button_Search
+            // 
+            this.button_Search.BackgroundImage = global::ALibrary.Properties.Resources.Open_folder_add_icon;
+            this.button_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_Search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Search.Location = new System.Drawing.Point(645, 99);
+            this.button_Search.Name = "button_Search";
+            this.button_Search.Size = new System.Drawing.Size(122, 112);
+            this.button_Search.TabIndex = 2;
+            this.button_Search.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Maroon;
             this.tabPage2.BackgroundImage = global::ALibrary.Properties.Resources.yildizlarin_sesi_3_stR6_cover;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.dataGridView_MyBooks);
             this.tabPage2.Controls.Add(this.button_Update);
             this.tabPage2.Controls.Add(this.button_Delete);
             this.tabPage2.Location = new System.Drawing.Point(8, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1466, 1058);
+            this.tabPage2.Size = new System.Drawing.Size(1484, 898);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "My Books";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Yellow;
-            this.label9.Location = new System.Drawing.Point(106, 583);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 41);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Update";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Yellow;
-            this.label8.Location = new System.Drawing.Point(106, 126);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 41);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Delete";
             // 
             // dataGridView_MyBooks
             // 
             this.dataGridView_MyBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MyBooks.Location = new System.Drawing.Point(445, 0);
+            this.dataGridView_MyBooks.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dataGridView_MyBooks.Location = new System.Drawing.Point(477, 3);
             this.dataGridView_MyBooks.Name = "dataGridView_MyBooks";
             this.dataGridView_MyBooks.RowHeadersWidth = 82;
             this.dataGridView_MyBooks.RowTemplate.Height = 33;
-            this.dataGridView_MyBooks.Size = new System.Drawing.Size(1004, 1052);
+            this.dataGridView_MyBooks.Size = new System.Drawing.Size(1004, 892);
             this.dataGridView_MyBooks.TabIndex = 0;
             // 
             // button_Update
@@ -321,7 +302,7 @@
             this.tabPage3.Controls.Add(this.pictureBox1);
             this.tabPage3.Location = new System.Drawing.Point(8, 39);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1466, 1058);
+            this.tabPage3.Size = new System.Drawing.Size(1484, 898);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Donate Books";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -350,6 +331,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(579, 776);
             this.panel1.TabIndex = 30;
+            // 
+            // textBox_BarkodNo
+            // 
+            this.textBox_BarkodNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_BarkodNo.Location = new System.Drawing.Point(260, 484);
+            this.textBox_BarkodNo.Name = "textBox_BarkodNo";
+            this.textBox_BarkodNo.Size = new System.Drawing.Size(242, 24);
+            this.textBox_BarkodNo.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(30, 483);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(182, 25);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Number Of Pages";
             // 
             // textBox_BookTitle
             // 
@@ -504,7 +503,7 @@
             this.tabPage4.Controls.Add(this.dataGridView_BooksInTheLibrary);
             this.tabPage4.Location = new System.Drawing.Point(8, 39);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1466, 1058);
+            this.tabPage4.Size = new System.Drawing.Size(1484, 898);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Books In The Library";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -525,7 +524,7 @@
             this.button2.BackgroundImage = global::ALibrary.Properties.Resources.Peters_Sword_icon;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(1265, 0);
+            this.button2.Location = new System.Drawing.Point(1187, 66);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 90);
             this.button2.TabIndex = 1;
@@ -539,30 +538,32 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(1365, 0);
+            this.button1.Location = new System.Drawing.Point(1348, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 90);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label10
+            // pictureBox2
             // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(30, 483);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(182, 25);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Number Of Pages";
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(285, 349);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
-            // textBox_BarkodNo
+            // panel2
             // 
-            this.textBox_BarkodNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_BarkodNo.Location = new System.Drawing.Point(260, 484);
-            this.textBox_BarkodNo.Name = "textBox_BarkodNo";
-            this.textBox_BarkodNo.Size = new System.Drawing.Size(242, 24);
-            this.textBox_BarkodNo.TabIndex = 31;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1500, 349);
+            this.panel2.TabIndex = 21;
             // 
             // LibraryBook
             // 
@@ -571,11 +572,11 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1447, 1302);
+            this.ClientSize = new System.Drawing.Size(1500, 1300);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(1500, 1300);
             this.Name = "LibraryBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LibraryBook";
@@ -589,7 +590,6 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_GettingBooks)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyBooks)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -597,6 +597,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BooksInTheLibrary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -632,8 +634,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button_Update;
         private System.Windows.Forms.Button button_Delete;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox_Categoryy;
@@ -648,5 +648,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox_BarkodNo;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel2;
     }
 }

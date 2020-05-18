@@ -11,7 +11,11 @@ using System.Data.SqlClient;
 using System.Globalization;
 using ALibrary.Model;
 using System.Runtime.InteropServices.WindowsRuntime;
-
+using System.Drawing.Text;
+using System.Reflection;
+using System.Windows.Forms;
+using System.IO;
+using System.Drawing.Imaging;
 namespace ALibrary
 {
     public partial class SignUp : Form
@@ -35,7 +39,7 @@ namespace ALibrary
             dataGridView_SignUp.DataSource = userSignUpDAO.GetAllUserSignUp();
         }
 
-
+        //Finalexamproperties
         private void FinalExamProperties()
         {
             #region
@@ -70,7 +74,8 @@ namespace ALibrary
             dateTimePicker_DateOfBirth.ShowUpDown = false;
             //Label>>property(visible,text)
             label_UserName.Visible = true;
-            label_UserName.Text = "User Name";
+            label_UserName.Text = "First Name";
+            label_UserName.Enabled = true;
             //Listbox>>property(SelectionMode,Sorted,Backcolor)
             listBox_AddressType.SelectionMode = SelectionMode.One;
             listBox_AddressType.Sorted = false;
@@ -90,8 +95,9 @@ namespace ALibrary
             maskedTextBox_IdentificationNumber.TextMaskFormat = MaskFormat.IncludePrompt;
             //Notifylcon>>property(BalloonTiplcon,BalloonTipText,BalloonTipTitleilcon?)
             notifyIcon1.BalloonTipIcon = ToolTipIcon.None;
-            notifyIcon1.BalloonTipText = null;
-            notifyIcon1.BalloonTipTitle = null;
+            notifyIcon1.BalloonTipText = "Sign Up!";
+            notifyIcon1.BalloonTipTitle = "Sign";
+            notifyIcon1.Icon = SystemIcons.Application;
             //numericUpDown>>property(value)
             numericUpDown_BookNumber.Value = new decimal(new int[] {
             0,
@@ -99,8 +105,8 @@ namespace ALibrary
             0,
             0});
             //PictureBox>>property(SizeMode,image)
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Image = Properties.Resources.Books_2_icon;
+            pictureBox_Picturee.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_Picturee.Image = Properties.Resources.Books_2_icon;
             //ProgressBar>>property(value,step,maximum,minimum)
             progressBar_Fill.Value = 1;
             progressBar_Fill.Step = 10;
@@ -125,13 +131,21 @@ namespace ALibrary
             //Groupbox>>property(text)
             groupBox_Gender.Text = "Gender";
             //MenuStrip>>property(items>>toolStripMenuItem>>property(text,dropdownıtems>>property(text)))
-
+            menuStrip1.Text = "Alibrary";
+            menuStrip1.Items.AddRange(new ToolStripItem[] {aToolStripMenuItem});
+            aToolStripMenuItem.Text = "Alibrary";
+            aToolStripMenuItem.DropDown = contextMenuStrip1;
             //errorProvider>>property(icon)
+            errorProvider1.SetError(textBox_Gmail, "mandatory field");//iconu özellikler kısmından ekledim
+           //Timer>>property(interval)
+            timer1.Interval = 100;
 
-            //Timer>>property(interval)
-            //DataGridView>>property(multiSelect,)
-
-
+            //DataGridView>>property(multiSelect,SelectionMode,BorderStyle,GridColor,DataSource)
+              dataGridView_SignUp.MultiSelect = false;
+              dataGridView_SignUp.GridColor = Color.DarkRed;
+            dataGridView_SignUp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+              dataGridView_SignUp.BorderStyle = BorderStyle.Fixed3D;
+            dataGridView_SignUp.DataSource = "(localdb)\\mssqllocaldb";
 
 
 
@@ -188,6 +202,7 @@ namespace ALibrary
         }
         #endregion
         //Combobox>>events(selectedindexchanged, mousedoubleclick)
+        #region
         private void comboBox_EducationStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox_EducationStatus.BackColor = Color.Azure;
@@ -196,10 +211,149 @@ namespace ALibrary
         {
             comboBox_EducationStatus.BackColor = Color.DarkRed;
         }
-        #region
         #endregion
         //DatetimePicker>>events(ValueChanged)
+        #region
+        private void dateTimePicker_DateOfBirth_ValueChanged(object sender, EventArgs e)
+        {
+            button_SignUp.BackColor = Color.Yellow;//Tarih değeri değiştiği zaman etkinleşir.
 
+        }
+        #endregion
+        //Label>>events(VisibleChanged)
+        #region
+         private void label_UserName_VisibleChanged(object sender, EventArgs e)
+        {
+            textBox_FirstName.BackColor = Color.DarkKhaki;//Labelin visible özelliği değiştinde etkinleşir.
+        }
+        #endregion
+        //Listbox>>events(SelectIndexChanged,BackColorChanged,SelectedValueChanged)
+        #region
+        private void listBox_AddressType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox_AddressType.BackColor = Color.DarkOliveGreen;//Seçilen index değişince etkinleşir.
+        }
+
+        private void listBox_AddressType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Yellow;//seçilen değer değişince etkinleşir.
+        }
+        private void listBox_AddressType_BackColorChanged(object sender, EventArgs e)
+        {
+            button_SignUp.BackColor = Color.DarkTurquoise;//Arka plan renginin değişmesi halinde aktifleşir.
+        }
+        #endregion
+        //Listview>>events(itemChecked,SelectIndexChanged)
+        #region
+        private void listView1_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            pictureBox2.Visible = false;//list viewe tıklama yapma durumunda aktifleşir yani öğe seçilmesi gerekir.
+            pictureBox_Picture.Visible = true;
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pictureBox2.Visible = false;
+            ;//seçilen öğenin değişmesi durumunda çalışır.
+        }
+
+        #endregion
+        //MaskedTextBox>>events(TypeValidationCompleted)
+        #region
+        private void maskedTextBox_PhoneNumber_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
+        {
+            maskedTextBox_PhoneNumber.BackColor = Color.AliceBlue;// ValidatingType özelliğini kullanarak geçerli değeri ayrıştırmayı tamamladığında oluşur.
+        }
+        #endregion
+        //notifylIcon>>events(BalloonTipClicked,BalloonTipClosed,BalloonTipShown)
+        #region
+        private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
+        {
+            textBox_UserName.BackColor = Color.Red;//balon ipucu tıklanınca etkin olur
+        }
+
+        private void notifyIcon1_BalloonTipClosed(object sender, EventArgs e)
+        {
+            textBox_Address.BackColor = Color.Crimson;//balon ipucu kapatılınca etkin olur
+
+        }
+
+        private void notifyIcon1_BalloonTipShown(object sender, EventArgs e)
+        {
+            maskedTextBox_PhoneNumber.BackColor = Color.LightSeaGreen;//balon ipucu ekran da görününce etkinleşir
+
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SignIn signIn = new SignIn();
+            signIn.Show();
+            this.Hide();
+            notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon1.BalloonTipText = "Sign Up!";
+            notifyIcon1.BalloonTipTitle = "Sign";
+            notifyIcon1.ShowBalloonTip(1000);
+        }
+        #endregion
+        //numericUpDown>>events(ValueChanged)
+        #region
+        private void numericUpDown_BookNumber_ValueChanged(object sender, EventArgs e)
+        {
+            numericUpDown_BookNumber.BackColor = Color.DeepSkyBlue; //numericdeki sayı değeri değişince aktifleşir
+        }
+        #endregion
+        //PictureBox>>events(click)
+        #region
+        private void pictureBox_Picturee_Click(object sender, EventArgs e)
+        {
+            SignUp signUp = new SignUp();  //pictureboxa basınca aktifleşir.
+            signUp.BackColor = Color.Red;
+        }
+        #endregion
+        //ProgressBar>>events(click)
+        #region
+        private void progressBar_Fill_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Registration Hand");//progressbara tıklanması halinde aktif olur
+        }
+        #endregion
+        //Radiobutton>>events(checkedchanged)
+        #region
+        private void radioButton_Man_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton_Women.BackColor = Color.Cyan;//radio butonun değimesi durumunda etkin olur
+        }
+
+        private void radioButton_Women_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton_Man.BackColor = Color.DarkMagenta;//radio butonun değimesi durumunda etkin olur
+        }
+        #endregion
+        //Textbox>>events(TextXhanged,MouseUp)
+        #region
+        private void textBox_FirstName_TextChanged(object sender, EventArgs e)
+        {
+            textBox_FirstName.BackColor = Color.Aqua;//textbox içine değer yazınca aktifleşir.
+        }
+
+        private void textBox_FirstName_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox_FirstName.BackColor = Color.Coral;//textbox a mouse tıklaması ile gerçekleşir.
+        }
+        #endregion
+        //TabControl>>events(click)
+        #region
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            maskedTextBox_IdentificationNumber.BackColor = Color.Red;//tab kontrole tıklanması halinde aktifleşir.
+        }
+        #endregion
+        //Timer>>events(Tick)
+        #region
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            aToolStripMenuItem.Text = DateTime.Now.ToString();
+        }
+        #endregion
         #endregion
 
         private void SignUpSignIn()
@@ -208,7 +362,8 @@ namespace ALibrary
             FillAllUserSigns();
         }
 
-        
+        //İnsert
+        #region
         private void SignUpInsert()
         {
 
@@ -241,7 +396,7 @@ namespace ALibrary
                     userSignUpDAO.MaritalStatus = "Single";
                 }
                 //DATA ACCESS OBJECT
-                userSignUpDAO.BookTypes = checkedListBox_BookTypes.Text;
+                userSignUpDAO.BookType = checkedListBox_BookTypes.Text;
                 userSignUpDAO.IdentificationNumber = maskedTextBox_IdentificationNumber.Text;
                 userSignUpDAO.Address = textBox_Address.Text;
                 userSignUpDAO.AddressType = GetAdressType();
@@ -249,6 +404,7 @@ namespace ALibrary
                 userSignUpDAO.MobilePhone = (maskedTextBox_PhoneNumber.Text);
                 userSignUpDAO.FirstName = textBox_FirstName.Text;
                 userSignUpDAO.LastName = textBox_LastName.Text;
+                userSignUpDAO.Picture = textBox_PictureUrl.Text;
 
                 List<String> errors = userSignUpDAO.GetErrors();
                 if (!errors.Any())
@@ -281,6 +437,7 @@ namespace ALibrary
                 return "";
             }
         }
+       static UserDAO userDAO = new UserDAO();
 
         private DateTime GetDate()
         {
@@ -293,15 +450,7 @@ namespace ALibrary
                 return DateTime.Now;
             }
         }
-
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            SignIn signIn = new SignIn();
-            signIn.Show();
-            this.Hide();
-        }
+        #endregion
         string Gender;
         private void dataGridView_SignUp_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -323,6 +472,7 @@ namespace ALibrary
                 textBox_LastName.Text = row.Cells["LastName"].ToString();
                 textBox_Gmail.Text = row.Cells["Gmail"].ToString();
                 maskedTextBox_PhoneNumber.Text = row.Cells["MobilePhone"].ToString();
+                textBox_PictureUrl.Text = row.Cells["Picture"].ToString();
 
 
             }
@@ -331,8 +481,36 @@ namespace ALibrary
                 MessageBox.Show(ex.ToString());
 
             }
+          
         }
 
-      
+        private void button_PictureSelect_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            pictureBox_Picturee.ImageLocation = openFileDialog1.FileName;
+            textBox_PictureUrl.Text = openFileDialog1.FileName;
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(dataGridView_SignUp.CurrentRow.Cells[0].Value);
+                userDAO.Delete(id);
+                MessageBox.Show("Deleted!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }          
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            // userDAO.Id = Convert.ToInt32(dataGridView_SignUp.CurrentRow.Cells[0].Value);
+
+            FillAllUserSigns();
+        }
     }
 }

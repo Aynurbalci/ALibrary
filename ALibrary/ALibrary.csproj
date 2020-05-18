@@ -73,12 +73,13 @@
     </Compile>
     <Compile Include="Model\BookDAO.cs" />
     <Compile Include="Model\Helper.cs" />
+    <Compile Include="Model\LibraryUser.cs" />
     <Compile Include="Model\UserDAO.cs" />
-    <Compile Include="PasswordUpdate.cs">
+    <Compile Include="PasswordLearn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PasswordUpdate.Designer.cs">
-      <DependentUpon>PasswordUpdate.cs</DependentUpon>
+    <Compile Include="PasswordLearn.Designer.cs">
+      <DependentUpon>PasswordLearn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,8 +107,8 @@
     <EmbeddedResource Include="LibraryBook.resx">
       <DependentUpon>LibraryBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PasswordUpdate.resx">
-      <DependentUpon>PasswordUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="PasswordLearn.resx">
+      <DependentUpon>PasswordLearn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -290,6 +291,114 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\yildizlarin-sesi-3-stR6_cover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tenor %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yildizlarin-sesi-3-stR6_cover1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f_9OkjLek4Qjyy9NxIZ5XchlVF4%40400x3462.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\readingabo_fmji3hso.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-620cc988ad7c03336cd7f3e6a39e942d27e15f6f.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\siir.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tenor %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aafd94cd48bee84580906e4da3d567fd82930b0c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animated-gifs-corporate-training.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\İletişim_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aslanlar-67980.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DJ_Kedi_03_Muzikliste.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_wEDP487L67KGcalM_QCTeVDR6c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Albania_240-animated-flag-gifs.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bayrak_01.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-39ea944d345244bb6e879b0e7d67ab2da8cb8364.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Waving Animation Flag of Afghan.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open-folder-add-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Photo-Video-Remove-Image-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-edit-clear-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-software-update-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2-Pictures-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cello-clipart-animated-19.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%292.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\435db46a4f40ed09dca8ae57695bd54e.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DJ_Kedi_03_Muzikliste1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest2.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

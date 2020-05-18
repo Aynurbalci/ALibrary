@@ -24,12 +24,12 @@ namespace ALibrary
         }
         private void FillAllBook()
         {
-            BookDAO bookDAO= new BookDAO();
+            BookDAO bookDAO = new BookDAO();
             dataGridView_GettingBooks.DataSource = bookDAO.GetAllBook();
             dataGridView_BooksInTheLibrary.DataSource = bookDAO.GetAllBook();
         }
 
-       
+
         #region
         bool move;
         int mouse_x;
@@ -79,7 +79,7 @@ namespace ALibrary
         private void BookInsert()
         {
 
-           try
+            try
             {
 
                 BookDAO bookDAO = new BookDAO();
@@ -91,7 +91,7 @@ namespace ALibrary
                 bookDAO.StockNumber = textBox_Piece.Text;
                 bookDAO.NumberOfPages = textBox_NumberOfPages.Text;
 
-              List<String> errors = bookDAO.GetError();
+                List<String> errors = bookDAO.GetError();
                 if (!errors.Any())
                 {
                     bookDAO.Insert();
@@ -128,8 +128,8 @@ namespace ALibrary
                 comboBox_Category.Text = row.Cells["Category"].ToString();
                 textBox_Piece.Text = (row.Cells["StockNumber"].ToString());
                 textBox_NumberOfPages.Text = row.Cells["NumberOfPages"].ToString();
-               
-                
+
+
 
 
             }
@@ -140,6 +140,15 @@ namespace ALibrary
             }
         }
 
-      
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            if (tabControl1.SelectedIndex == 1) 
+            {
+                UserDAO userDAO = new UserDAO();
+                dataGridView_MyBooks.DataSource = userDAO.GetAllUserBooks(Helper.LogginUser);
+            }          
+        }
+
+
     }
-    }
+}

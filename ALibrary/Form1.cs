@@ -33,19 +33,21 @@ namespace ALibrary
 
       
 
-        private void button4_Click(object sender, EventArgs e)
+      
+
+        private void buttons_Click_1(object sender, EventArgs e)
         {
             SignIn signIn = new SignIn();
             signIn.Show();
-            this.Hide();          
+            this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonU_Click_1(object sender, EventArgs e)
         {
+
             SignUp signUp = new SignUp();
             signUp.Show();
             this.Hide();
         }
-
     }
 }
