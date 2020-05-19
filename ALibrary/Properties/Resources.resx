@@ -121,8 +121,8 @@
   <data name="tenor (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tenor (2).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Books-2-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Books-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DJ_Kedi_03_Muzikliste1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DJ_Kedi_03_Muzikliste1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Actions-edit-clear-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-edit-clear-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,9 +162,6 @@
   </data>
   <data name="8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\s-39ea944d345244bb6e879b0e7d67ab2da8cb8364.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="images (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +214,8 @@
   <data name="cello-clipart-animated-19" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cello-clipart-animated-19.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="yildizlarin-sesi-3-stR6_cover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\yildizlarin-sesi-3-stR6_cover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2-Pictures-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2-Pictures-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -240,6 +237,9 @@
   </data>
   <data name="olen-esi-icin-diktigi-6-bin-agacin-sirri-17-yil-709112_7493_5_b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\olen-esi-icin-diktigi-6-bin-agacin-sirri-17-yil-709112_7493_5_b.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="system-software-update-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\system-software-update-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="indir1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\indir1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,8 +268,8 @@
   <data name="s-aafd94cd48bee84580906e4da3d567fd82930b0c" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\s-aafd94cd48bee84580906e4da3d567fd82930b0c.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Open-folder-add-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Open-folder-add-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Books-2-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Books-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unnamed2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,14 +295,8 @@
   <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DJ_Kedi_03_Muzikliste1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DJ_Kedi_03_Muzikliste1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="İletişim_gif" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\İletişim_gif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="s-974328444780d68ffa59a9628c7f78bb7ec589f8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\s-974328444780d68ffa59a9628c7f78bb7ec589f8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Folder-Add-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Folder-Add-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,8 +313,8 @@
   <data name="8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="435db46a4f40ed09dca8ae57695bd54e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\435db46a4f40ed09dca8ae57695bd54e.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yildizlarin-sesi-3-stR6_cover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yildizlarin-sesi-3-stR6_cover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WhatsApp Image 2020-05-10 at 00.03.24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2020-05-10 at 00.03.24.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -334,8 +328,14 @@
   <data name="e0e96dd47c7b17d3e7bbb621f49d9db21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\e0e96dd47c7b17d3e7bbb621f49d9db21.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Open-folder-add-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Open-folder-add-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ispan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\giphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (3).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="afgan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Waving Animation Flag of Afghan.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -349,31 +349,34 @@
   <data name="DJ_Kedi_03_Muzikliste" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DJ_Kedi_03_Muzikliste.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="turk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bayrak_01.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\s-39ea944d345244bb6e879b0e7d67ab2da8cb8364.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unnamed (2)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed (2)2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="system-software-update-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\system-software-update-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="s-974328444780d68ffa59a9628c7f78bb7ec589f8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\s-974328444780d68ffa59a9628c7f78bb7ec589f8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="f_9OkjLek4Qjyy9NxIZ5XchlVF4@400x346" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f_9OkjLek4Qjyy9NxIZ5XchlVF4@400x346.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Klein Libraries Mission " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Klein Libraries Mission .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (3).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="435db46a4f40ed09dca8ae57695bd54e" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\435db46a4f40ed09dca8ae57695bd54e.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bayrak_01.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Open-folder-add-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Open-folder-add-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8751280422b1219f-jason-wong-s-art-and-animation-cello-for-ever-pinterest2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Start-Menu-Search-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Start-Menu-Search-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

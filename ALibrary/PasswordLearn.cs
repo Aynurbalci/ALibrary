@@ -24,16 +24,7 @@ namespace ALibrary
         {
             InitializeComponent();
         }
-        private void PasswordLearnAll()
-        {
-            UserDAO userDAO = new UserDAO();
-            emaill = userDAO.Gmail;
-            passwordd = userDAO.Password;
-            username = userDAO.UserName;
-
-
-           // dataGridView_SignUp.DataSource = userSignUpDAO.GetAllUserSignUp();
-        }
+     
         private void SendEmail(string address, string subject, string message)
         {
 

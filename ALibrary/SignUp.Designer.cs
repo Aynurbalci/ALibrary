@@ -101,22 +101,25 @@
             this.numericUpDown_BookNumber = new System.Windows.Forms.NumericUpDown();
             this.progressBar_Fill = new System.Windows.Forms.ProgressBar();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.textBox_LastName = new System.Windows.Forms.TextBox();
+            this.maskedTextBox_PhoneNumber = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Gmail = new System.Windows.Forms.TextBox();
+            this.textBox_UserName = new System.Windows.Forms.TextBox();
+            this.button_PictureSelect = new System.Windows.Forms.Button();
+            this.button_PictureAdd = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_UserRegistration = new System.Windows.Forms.TabPage();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_LastName = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.maskedTextBox_PhoneNumber = new System.Windows.Forms.MaskedTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox_PasswordAgain = new System.Windows.Forms.TextBox();
-            this.textBox_Gmail = new System.Windows.Forms.TextBox();
-            this.textBox_UserName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -138,9 +141,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button_PictureSelect = new System.Windows.Forms.Button();
-            this.button_PictureAdd = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox_Picturee = new System.Windows.Forms.PictureBox();
             this.textBox_PictureUrl = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_BookNumber)).BeginInit();
@@ -209,7 +209,9 @@
             this.textBox_FirstName.Name = "textBox_FirstName";
             this.textBox_FirstName.Size = new System.Drawing.Size(310, 31);
             this.textBox_FirstName.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.textBox_FirstName, "Please enter a textual expression");
             this.textBox_FirstName.TextChanged += new System.EventHandler(this.textBox_FirstName_TextChanged);
+            this.textBox_FirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_FirstName_KeyPress);
             this.textBox_FirstName.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBox_FirstName_MouseUp);
             // 
             // textBox_Password
@@ -218,6 +220,7 @@
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(312, 31);
             this.textBox_Password.TabIndex = 32;
+            this.toolTip1.SetToolTip(this.textBox_Password, "mandatory field");
             // 
             // textBox_Address
             // 
@@ -226,6 +229,7 @@
             this.textBox_Address.Name = "textBox_Address";
             this.textBox_Address.Size = new System.Drawing.Size(510, 74);
             this.textBox_Address.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.textBox_Address, "enter your address information");
             // 
             // radioButton_Man
             // 
@@ -246,6 +250,7 @@
             this.comboBox_EducationStatus.Name = "comboBox_EducationStatus";
             this.comboBox_EducationStatus.Size = new System.Drawing.Size(310, 33);
             this.comboBox_EducationStatus.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.comboBox_EducationStatus, "Please select educational status");
             this.comboBox_EducationStatus.SelectedIndexChanged += new System.EventHandler(this.comboBox_EducationStatus_SelectedIndexChanged);
             this.comboBox_EducationStatus.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.comboBox_EducationStatus_MouseDoubleClick);
             // 
@@ -290,6 +295,7 @@
             this.checkedListBox_BookTypes.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.checkedListBox_BookTypes.Size = new System.Drawing.Size(324, 116);
             this.checkedListBox_BookTypes.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.checkedListBox_BookTypes, "please select a book type");
             this.checkedListBox_BookTypes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox_BookTypes_ItemCheck);
             this.checkedListBox_BookTypes.SelectedValueChanged += new System.EventHandler(this.checkedListBox_BookTypes_SelectedValueChanged);
             // 
@@ -300,6 +306,7 @@
             this.dateTimePicker_DateOfBirth.Name = "dateTimePicker_DateOfBirth";
             this.dateTimePicker_DateOfBirth.Size = new System.Drawing.Size(310, 31);
             this.dateTimePicker_DateOfBirth.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.dateTimePicker_DateOfBirth, "please select a date");
             this.dateTimePicker_DateOfBirth.ValueChanged += new System.EventHandler(this.dateTimePicker_DateOfBirth_ValueChanged);
             // 
             // label8
@@ -326,6 +333,7 @@
             this.listBox_AddressType.Size = new System.Drawing.Size(312, 79);
             this.listBox_AddressType.Sorted = true;
             this.listBox_AddressType.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.listBox_AddressType, "select address type");
             this.listBox_AddressType.SelectedIndexChanged += new System.EventHandler(this.listBox_AddressType_SelectedIndexChanged);
             this.listBox_AddressType.SelectedValueChanged += new System.EventHandler(this.listBox_AddressType_SelectedValueChanged);
             this.listBox_AddressType.BackColorChanged += new System.EventHandler(this.listBox_AddressType_BackColorChanged);
@@ -336,6 +344,8 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.First,
             this.Last});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             listViewItem1.StateImageIndex = 0;
             listViewItem2.StateImageIndex = 0;
@@ -362,14 +372,15 @@
             listViewItem10,
             listViewItem11,
             listViewItem12});
-            this.listView1.Location = new System.Drawing.Point(752, 6);
+            this.listView1.Location = new System.Drawing.Point(756, 0);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Scrollable = false;
-            this.listView1.Size = new System.Drawing.Size(701, 832);
+            this.listView1.Size = new System.Drawing.Size(701, 837);
             this.listView1.TabIndex = 20;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listView1_ItemCheck);
             this.listView1.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listView1_ItemChecked);
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
@@ -392,6 +403,7 @@
             this.maskedTextBox_IdentificationNumber.Size = new System.Drawing.Size(312, 31);
             this.maskedTextBox_IdentificationNumber.TabIndex = 21;
             this.maskedTextBox_IdentificationNumber.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.toolTip1.SetToolTip(this.maskedTextBox_IdentificationNumber, "enter your ID number");
             // 
             // notifyIcon1
             // 
@@ -417,11 +429,89 @@
             // progressBar_Fill
             // 
             this.progressBar_Fill.Location = new System.Drawing.Point(997, 797);
+            this.progressBar_Fill.MarqueeAnimationSpeed = 10;
             this.progressBar_Fill.Name = "progressBar_Fill";
             this.progressBar_Fill.Size = new System.Drawing.Size(445, 25);
             this.progressBar_Fill.TabIndex = 24;
             this.progressBar_Fill.Value = 1;
             this.progressBar_Fill.Click += new System.EventHandler(this.progressBar_Fill_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.toolTip1.ForeColor = System.Drawing.Color.Maroon;
+            // 
+            // textBox_LastName
+            // 
+            this.textBox_LastName.Location = new System.Drawing.Point(251, 144);
+            this.textBox_LastName.Name = "textBox_LastName";
+            this.textBox_LastName.Size = new System.Drawing.Size(310, 31);
+            this.textBox_LastName.TabIndex = 44;
+            this.toolTip1.SetToolTip(this.textBox_LastName, "Please enter a textual expression");
+            this.textBox_LastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_LastName_KeyPress);
+            // 
+            // maskedTextBox_PhoneNumber
+            // 
+            this.maskedTextBox_PhoneNumber.Location = new System.Drawing.Point(855, 670);
+            this.maskedTextBox_PhoneNumber.Mask = "(999) 000-0000";
+            this.maskedTextBox_PhoneNumber.Name = "maskedTextBox_PhoneNumber";
+            this.maskedTextBox_PhoneNumber.Size = new System.Drawing.Size(312, 31);
+            this.maskedTextBox_PhoneNumber.TabIndex = 41;
+            this.toolTip1.SetToolTip(this.maskedTextBox_PhoneNumber, "please enter your phone number");
+            this.maskedTextBox_PhoneNumber.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.maskedTextBox_PhoneNumber_TypeValidationCompleted);
+            // 
+            // textBox_Gmail
+            // 
+            this.textBox_Gmail.Location = new System.Drawing.Point(855, 472);
+            this.textBox_Gmail.Name = "textBox_Gmail";
+            this.textBox_Gmail.Size = new System.Drawing.Size(312, 31);
+            this.textBox_Gmail.TabIndex = 33;
+            this.toolTip1.SetToolTip(this.textBox_Gmail, "please enter gmail");
+            // 
+            // textBox_UserName
+            // 
+            this.textBox_UserName.Location = new System.Drawing.Point(855, 404);
+            this.textBox_UserName.Name = "textBox_UserName";
+            this.textBox_UserName.Size = new System.Drawing.Size(312, 31);
+            this.textBox_UserName.TabIndex = 31;
+            this.toolTip1.SetToolTip(this.textBox_UserName, "please enter your User Name");
+            // 
+            // button_PictureSelect
+            // 
+            this.button_PictureSelect.BackgroundImage = global::ALibrary.Properties.Resources._2_Pictures_icon;
+            this.button_PictureSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_PictureSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_PictureSelect.Location = new System.Drawing.Point(987, 27);
+            this.button_PictureSelect.Name = "button_PictureSelect";
+            this.button_PictureSelect.Size = new System.Drawing.Size(103, 87);
+            this.button_PictureSelect.TabIndex = 30;
+            this.toolTip1.SetToolTip(this.button_PictureSelect, "Choose image from file!");
+            this.button_PictureSelect.UseVisualStyleBackColor = true;
+            this.button_PictureSelect.Click += new System.EventHandler(this.button_PictureSelect_Click);
+            // 
+            // button_PictureAdd
+            // 
+            this.button_PictureAdd.BackgroundImage = global::ALibrary.Properties.Resources.Pictures_icon;
+            this.button_PictureAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_PictureAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_PictureAdd.Location = new System.Drawing.Point(987, 120);
+            this.button_PictureAdd.Name = "button_PictureAdd";
+            this.button_PictureAdd.Size = new System.Drawing.Size(103, 88);
+            this.button_PictureAdd.TabIndex = 29;
+            this.toolTip1.SetToolTip(this.button_PictureAdd, "save picture");
+            this.button_PictureAdd.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::ALibrary.Properties.Resources.Photo_Video_Remove_Image_icon;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(987, 214);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(103, 80);
+            this.button3.TabIndex = 28;
+            this.toolTip1.SetToolTip(this.button3, "delete picture");
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -511,13 +601,6 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Last Name";
             // 
-            // textBox_LastName
-            // 
-            this.textBox_LastName.Location = new System.Drawing.Point(251, 144);
-            this.textBox_LastName.Name = "textBox_LastName";
-            this.textBox_LastName.Size = new System.Drawing.Size(310, 31);
-            this.textBox_LastName.TabIndex = 44;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(1253, 640);
@@ -536,15 +619,6 @@
             this.label11.Size = new System.Drawing.Size(155, 25);
             this.label11.TabIndex = 42;
             this.label11.Text = "Phone Number";
-            // 
-            // maskedTextBox_PhoneNumber
-            // 
-            this.maskedTextBox_PhoneNumber.Location = new System.Drawing.Point(855, 670);
-            this.maskedTextBox_PhoneNumber.Mask = "(999) 000-0000";
-            this.maskedTextBox_PhoneNumber.Name = "maskedTextBox_PhoneNumber";
-            this.maskedTextBox_PhoneNumber.Size = new System.Drawing.Size(312, 31);
-            this.maskedTextBox_PhoneNumber.TabIndex = 41;
-            this.maskedTextBox_PhoneNumber.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.maskedTextBox_PhoneNumber_TypeValidationCompleted);
             // 
             // label16
             // 
@@ -588,20 +662,6 @@
             this.textBox_PasswordAgain.Name = "textBox_PasswordAgain";
             this.textBox_PasswordAgain.Size = new System.Drawing.Size(312, 31);
             this.textBox_PasswordAgain.TabIndex = 34;
-            // 
-            // textBox_Gmail
-            // 
-            this.textBox_Gmail.Location = new System.Drawing.Point(855, 472);
-            this.textBox_Gmail.Name = "textBox_Gmail";
-            this.textBox_Gmail.Size = new System.Drawing.Size(312, 31);
-            this.textBox_Gmail.TabIndex = 33;
-            // 
-            // textBox_UserName
-            // 
-            this.textBox_UserName.Location = new System.Drawing.Point(855, 404);
-            this.textBox_UserName.Name = "textBox_UserName";
-            this.textBox_UserName.Size = new System.Drawing.Size(312, 31);
-            this.textBox_UserName.TabIndex = 31;
             // 
             // label10
             // 
@@ -650,6 +710,7 @@
             this.groupBox_Gender.Size = new System.Drawing.Size(532, 82);
             this.groupBox_Gender.TabIndex = 26;
             this.groupBox_Gender.TabStop = false;
+            this.groupBox_Gender.Text = "please select one gender ";
             // 
             // radioButton_Women
             // 
@@ -748,7 +809,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1473, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1473, 48);
             this.menuStrip1.TabIndex = 27;
             // 
             // toolStripMenuItem1
@@ -756,7 +817,7 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(20, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(20, 40);
             // 
             // toolStripMenuItem2
             // 
@@ -789,40 +850,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // button_PictureSelect
-            // 
-            this.button_PictureSelect.BackgroundImage = global::ALibrary.Properties.Resources._2_Pictures_icon;
-            this.button_PictureSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_PictureSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_PictureSelect.Location = new System.Drawing.Point(987, 27);
-            this.button_PictureSelect.Name = "button_PictureSelect";
-            this.button_PictureSelect.Size = new System.Drawing.Size(103, 87);
-            this.button_PictureSelect.TabIndex = 30;
-            this.button_PictureSelect.UseVisualStyleBackColor = true;
-            this.button_PictureSelect.Click += new System.EventHandler(this.button_PictureSelect_Click);
-            // 
-            // button_PictureAdd
-            // 
-            this.button_PictureAdd.BackgroundImage = global::ALibrary.Properties.Resources.Pictures_icon;
-            this.button_PictureAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_PictureAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_PictureAdd.Location = new System.Drawing.Point(987, 120);
-            this.button_PictureAdd.Name = "button_PictureAdd";
-            this.button_PictureAdd.Size = new System.Drawing.Size(103, 88);
-            this.button_PictureAdd.TabIndex = 29;
-            this.button_PictureAdd.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::ALibrary.Properties.Resources.Photo_Video_Remove_Image_icon;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(987, 214);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 80);
-            this.button3.TabIndex = 28;
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // pictureBox_Picturee
             // 

@@ -14,7 +14,7 @@ namespace ALibrary
 {
     public partial class SignIn : Form
     {
-        public static SqlConnection connection = new SqlConnection("server=(localdb)\\mssqllocaldb;Database=User;Integrated security=true");
+        public static SqlConnection connection = new SqlConnection("server=(localdb)\\mssqllocaldb;Database=AynurLibraryDb;Integrated security=true");
         public SignIn()
         {
             InitializeComponent();
@@ -80,25 +80,56 @@ namespace ALibrary
         {
             button_Login.BackColor = Color.DarkRed;
         }
-
-        private void button_Login_Click_1(object sender, EventArgs e)
+        private void CloseConnection()
         {
-            UserDAO userDAO = new UserDAO();
-            string UserName = textBox_UserName.Text.Trim();
-            string Password = textBox_Password.Text.Trim();
-            LibraryUser userExist = userDAO.GetUser(UserName, Password);
-
-            if (userExist != null)
+            if (connection.State != System.Data.ConnectionState.Closed)
             {
-                LibraryBook librarySystem = new LibraryBook();
-                Helper.LogginUser = userExist;
-                librarySystem.Show();
-                this.Hide();
+                connection.Close();
             }
-            else
+        }
+
+        private void OpenConnection()
+        {
+            if (connection.State != System.Data.ConnectionState.Open)
+            {
+                connection.Open();
+            }
+        }
+        public void GetUser(string username, string password)
+        {
+            OpenConnection();
+            string cmd = "SELECT * FROM LibraryUser WHERE (UserName = @UserName OR Gmail = @Gmail) AND Password = @Password";
+            SqlCommand command = new SqlCommand(cmd, connection);
+            command.Parameters.AddWithValue("@UserName", username);
+            command.Parameters.AddWithValue("@Gmail", username);
+            command.Parameters.AddWithValue("@Password", password);
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            CloseConnection();
+
+            if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("User does not exist");
+                return;
             }
+
+            LibraryBook librarySystem = new LibraryBook();
+            librarySystem.UserId = dt.Rows[0]["Id"].ToString();
+            librarySystem.UserPicture = dt.Rows[0]["Picture"].ToString();
+            librarySystem.UserName = dt.Rows[0]["UserName"].ToString();
+            librarySystem.Show();
+            this.Hide();
+
+        }
+        private void button_Login_Click_1(object sender, EventArgs e)
+        {
+            string UserName = textBox_UserName.Text.Trim();
+            string Password = textBox_Password.Text.Trim();
+            GetUser(UserName, Password);
+
+
         }
 
         #endregion

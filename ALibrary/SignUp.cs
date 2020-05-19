@@ -19,7 +19,364 @@ using System.Drawing.Imaging;
 namespace ALibrary
 {
     public partial class SignUp : Form
-    {
+    { 
+        //insert,....
+        #region
+        public static readonly string ConnectionKey = "server=(localdb)\\mssqllocaldb;Database=AynurLibraryDb;Integrated security = true";
+
+        public static bool AynurIsStringEmpty(string a)
+        {
+            return a == null || a.Trim().Length == 0;
+        }
+
+        public static DateTime AynurDateTimeParser(string dateString)
+        {
+            try
+            {
+                CultureInfo provider = CultureInfo.InvariantCulture;
+                DateTime dateTime = DateTime.ParseExact(dateString, new string[] { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy" }, provider, DateTimeStyles.None);
+                return dateTime;
+            }
+            catch (Exception ex)
+            {
+                return DateTime.Now;
+            }
+        }
+        public string Id { get; set; }
+        public String UserName { get; set; }
+        public String Gender { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public String EducationStatus { get; set; }
+        public String MaritalStatus { get; set; }
+        public String BookType { get; set; }
+        public String IdentificationNumber { get; set; }
+        public String Address { get; set; }
+        public String AddressType { get; set; }
+        public String Gmail { get; set; }
+        public String MobilePhone { get; set; }
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
+        public String Password { get; set; }
+        public string Picture { get; set; }
+
+        private SqlConnection connection = new SqlConnection(ConnectionKey);
+
+        public List<string> GetErrors()
+        {
+            List<string> errors = new List<string>();
+
+            if (AynurIsStringEmpty(UserName))
+            {
+                errors.Add("Username is required");
+            }
+
+            if (AynurIsStringEmpty(Password))
+            {
+                errors.Add("Password is required");
+            }
+
+            //if (Helper.AynurIsStringEmpty(Gender))
+            //{
+            //    errors.Add("Gender is required");
+            //}
+            //if (Helper.AynurIsStringEmpty(EducationStatus))
+            //{
+            //    errors.Add("EducationStatus is required");
+            //}
+
+            //if (Helper.AynurIsStringEmpty(MaritalStatus))
+            //{
+            //    errors.Add("MaritalStatus is required");
+            //}
+
+            //if (Helper.AynurIsStringEmpty(BookTypes))
+            //{
+            //    errors.Add("BookTypes is required");
+            //}
+
+
+            //if (Helper.AynurIsStringEmpty(Address))
+            //{
+            //    errors.Add("Address is required");
+            //}
+
+            //if (Helper.AynurIsStringEmpty(AddressType))
+            //{
+            //    errors.Add("AddressType is required");
+            //}
+
+
+            if (AynurIsStringEmpty(Gmail))
+            {
+                errors.Add("Gmail is required");
+            }
+
+            //if (Helper.AynurIsStringEmpty(MobilePhone))
+            //{
+            //    errors.Add("PhoneNumber is required");
+            //}
+            //if (Helper.AynurIsStringEmpty(FirstName))
+            //{
+            //    errors.Add("FirstName is required");
+            //}
+
+            //if (Helper.AynurIsStringEmpty(LastName))
+            //{
+            //    errors.Add("LastName is required");
+            //}
+
+
+
+            return errors;
+        }
+        public DataTable GetAllUserSignUp()
+        {
+            OpenConnection();
+            string key = "SELECT * FROM LibraryUser";
+            SqlCommand command = new SqlCommand(key, connection);
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            CloseConnection();
+            return dt;
+        }
+
+
+        public void GetUser(string username, string password)
+        {
+            OpenConnection();
+            string cmd = "SELECT * FROM LibraryUser WHERE (UserName = @UserName OR Gmail = @Gmail) AND Password = @Password";
+            SqlCommand command = new SqlCommand(cmd, connection);
+            command.Parameters.AddWithValue("@UserName", username);
+            command.Parameters.AddWithValue("@Gmail", username);
+            command.Parameters.AddWithValue("@Password", password);
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            CloseConnection();
+
+            if (dt.Rows.Count == 0)
+            {
+                return;
+            }
+
+            Id = dt.Rows[0]["Id"].ToString();
+            UserName = dt.Rows[0]["UserName"].ToString();
+            Password = dt.Rows[0]["Password"].ToString();
+            Gmail = dt.Rows[0]["Gmail"].ToString();
+            Picture = dt.Rows[0]["Picture"].ToString();
+            FirstName = dt.Rows[0]["FirstName"].ToString();
+            LastName = dt.Rows[0]["LastName"].ToString();
+            MobilePhone = dt.Rows[0]["MobilePhone"].ToString();
+
+
+            return;
+        }
+
+        public DataTable GetBook(string bookIdStr)
+        {
+            try
+            {
+                int bookId = Convert.ToInt32(bookIdStr);
+                OpenConnection();
+                string key = "SELECT * FROM Book WHERE BarcodeNo=@bookId";
+                SqlCommand command = new SqlCommand(key, connection);
+                command.Parameters.AddWithValue("bookId", bookId);
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                CloseConnection();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+
+        }
+
+
+        public DataTable GetAllUserBooks()
+        {
+            OpenConnection();
+            string key = "SELECT * FROM UserBook WHERE UserId=@UserId";
+            SqlCommand command = new SqlCommand(key, connection);
+            command.Parameters.AddWithValue("UserId", Id);
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            DataTable dataTable = null;
+            foreach (DataRow row in dt.Rows)
+            {
+                DataTable temp = GetBook(row["BookId"].ToString());
+
+                if (temp == null)
+                {
+                    continue;
+                }
+
+                if (dataTable == null)
+                {
+                    dataTable = temp;
+                    continue;
+                }
+
+                dataTable.Merge(temp);
+
+            }
+
+            CloseConnection();
+            return dataTable;
+        }
+
+        public void Insert()
+        {
+            OpenConnection();
+
+            string cmd = @"INSERT INTO [dbo].[LibraryUser]
+           ([UserName]
+           ,[Gender]
+           ,[EducationStatus]
+           ,[MaritalStatus]
+           ,[BookType]
+           ,[IdentificationNumber]
+           ,[Address]
+           ,[AddressType]
+           ,[Gmail]
+           ,[MobilePhone]
+           ,[FirstName]
+           ,[LastName]
+           ,[Password]
+           ,[Picture]    )
+     VALUES
+           (@UserName
+           ,@Gender
+           ,@EducationStatus
+           ,@MaritalStatus
+           ,@BookType
+           ,@IdentificationNumber
+           ,@Address
+           ,@AddressType
+           ,@Gmail
+           ,@MobilePhone
+           ,@FirstName
+           ,@LastName
+           ,@Password
+            ,@Picture)";
+
+
+
+            SqlCommand command = new SqlCommand(cmd, connection);
+            command.Parameters.Add(new SqlParameter("@UserName", UserName));
+            command.Parameters.Add(new SqlParameter("@Gender", Gender));
+            command.Parameters.Add(new SqlParameter("@DateOfBirth", DateOfBirth));
+            command.Parameters.Add(new SqlParameter("@EducationStatus", EducationStatus));
+            command.Parameters.Add(new SqlParameter("@MaritalStatus", MaritalStatus));
+            command.Parameters.Add(new SqlParameter("@BookType", BookType));
+            command.Parameters.Add(new SqlParameter("@IdentificationNumber", IdentificationNumber));
+            command.Parameters.Add(new SqlParameter("@Address", Address));
+            command.Parameters.Add(new SqlParameter("@AddressType", AddressType));
+            command.Parameters.Add(new SqlParameter("@Gmail", Gmail));
+            command.Parameters.Add(new SqlParameter("@MobilePhone", MobilePhone));
+            command.Parameters.Add(new SqlParameter("@FirstName", FirstName));
+            command.Parameters.Add(new SqlParameter("@LastName", LastName));
+            command.Parameters.Add(new SqlParameter("@Password", Password));
+            command.Parameters.Add(new SqlParameter("@Picture", Picture));
+
+
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+
+        }
+
+        private void CloseConnection()
+        {
+            if (connection.State != System.Data.ConnectionState.Closed)
+            {
+                connection.Close();
+            }
+        }
+
+        private void OpenConnection()
+        {
+            if (connection.State != System.Data.ConnectionState.Open)
+            {
+                connection.Open();
+            }
+        }
+        public void Delete(int id)
+        {
+            OpenConnection();
+            SqlCommand command = new SqlCommand(
+                "Delete from LibraryUser where Id=@id", connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.ExecuteNonQuery();
+            CloseConnection();
+
+
+
+
+        }
+        public void Updated()
+        {
+            if (Id.ToString().Equals("0"))
+            {
+                return;
+            }
+
+            string cmd = @"UPDATE [dbo].[LibraryUser]
+                           SET [UserName] = @UserName,
+                           [Gender] = @Gender,
+                           [EducationStatus] = @EducationStatus,
+                           [MaritalStatus] = @MaritalStatus,
+                           [BookType] = @BookType,
+                           [IdentificationNumber] = @IdentificationNumber,
+                           [Address] = @Address,
+                           [AddressType] = @AddressType,
+                           [Gmail] = @Gmail,
+                           [MobilePhone] = @MobilePhone,
+                           [FirstName] = @FirstName,
+                           [LastName] = @LastName,
+                           [Password] = @Password,
+                           [Picture] = @Picture
+                         WHERE [Id] = @id";
+
+            OpenConnection();
+            SqlCommand command = new SqlCommand(cmd, connection);
+            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Gender", Gender);
+            command.Parameters.AddWithValue("@EducationStatus", EducationStatus);
+            command.Parameters.AddWithValue("@MaritalStatus", MaritalStatus);
+            command.Parameters.AddWithValue("@BookType", BookType);
+            command.Parameters.AddWithValue("@IdentificationNumber", IdentificationNumber);
+            command.Parameters.AddWithValue("@Address", Address);
+            command.Parameters.AddWithValue("@AddressType", AddressType);
+            command.Parameters.AddWithValue("@Gmail", Gmail);
+            command.Parameters.AddWithValue("@MobilePhone", MobilePhone);
+            command.Parameters.AddWithValue("@FirstName", FirstName);
+            command.Parameters.AddWithValue("@LastName", LastName);
+            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@Picture", Picture);
+
+            command.Parameters.Add("@id", SqlDbType.Int);
+            command.Parameters["@id"].Value = Id;
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+
+
+
+
+        }
+        #endregion
+
+
 
         public SignUp()
         {
@@ -30,13 +387,13 @@ namespace ALibrary
         {
             FinalExamProperties();
             FillAllUserSigns();
+            progr();
 
         }
 
         private void FillAllUserSigns()
         {
-            UserDAO userSignUpDAO = new UserDAO();
-            dataGridView_SignUp.DataSource = userSignUpDAO.GetAllUserSignUp();
+            dataGridView_SignUp.DataSource =GetAllUserSignUp();
         }
 
         //Finalexamproperties
@@ -82,10 +439,10 @@ namespace ALibrary
             listBox_AddressType.BackColor = SystemColors.Info;
             //Listview(HeaderStyle,MultiSelect,Sorting,BorderStyle,CheckBoxes,FullRowSelect,GridLines,View)
             listView1.HeaderStyle = ColumnHeaderStyle.Clickable;
-            listView1.MultiSelect = true;
+            listView1.MultiSelect = false;
             listView1.Sorting = System.Windows.Forms.SortOrder.None;
             listView1.BorderStyle = BorderStyle.Fixed3D;
-            listView1.CheckBoxes = true;
+           listView1.CheckBoxes = true;
             listView1.FullRowSelect = false;
             listView1.GridLines = false;
             listView1.View = View.Details;
@@ -97,6 +454,7 @@ namespace ALibrary
             notifyIcon1.BalloonTipIcon = ToolTipIcon.None;
             notifyIcon1.BalloonTipText = "Sign Up!";
             notifyIcon1.BalloonTipTitle = "Sign";
+            
             notifyIcon1.Icon = SystemIcons.Application;
             //numericUpDown>>property(value)
             numericUpDown_BookNumber.Value = new decimal(new int[] {
@@ -108,10 +466,11 @@ namespace ALibrary
             pictureBox_Picturee.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_Picturee.Image = Properties.Resources.Books_2_icon;
             //ProgressBar>>property(value,step,maximum,minimum)
-            progressBar_Fill.Value = 1;
-            progressBar_Fill.Step = 10;
-            progressBar_Fill.Maximum = 100;
-            progressBar_Fill.Minimum = 0;
+            progressBar_Fill.Value = 0;
+           progressBar_Fill.Step = 0;
+          progressBar_Fill.Maximum = 10;
+          progressBar_Fill.Minimum = 0;
+
             //Radiobutton>>property(checked,text)
             radioButton_Women.Text = "Women";
             radioButton_Man.Text = "Man";
@@ -123,7 +482,7 @@ namespace ALibrary
             textBox_FirstName.Font = new Font("Verdana", 7.875F, ((FontStyle)((FontStyle.Bold | FontStyle.Italic))), GraphicsUnit.Point, ((byte)(162)));
             //ToolTip>>property(IsBaloon,ToolTiplcon,ToolTipTitle)
             toolTip1.IsBalloon = false;
-            toolTip1.ToolTipIcon = ToolTipIcon.Warning;
+            toolTip1.ToolTipIcon = ToolTipIcon.None;
             toolTip1.ToolTipTitle = null;
             //TabControl>>property(TabPages>>Text)
             tabPage_UserRegistration.Text = "User Registration";
@@ -217,8 +576,13 @@ namespace ALibrary
         private void dateTimePicker_DateOfBirth_ValueChanged(object sender, EventArgs e)
         {
             button_SignUp.BackColor = Color.Yellow;//Tarih değeri değiştiği zaman etkinleşir.
-
+            if (dateTimePicker_DateOfBirth != null)
+            {
+                prog = prog + 1;
+                progressBar_Fill.Value = prog;
+            }
         }
+
         #endregion
         //Label>>events(VisibleChanged)
         #region
@@ -253,7 +617,12 @@ namespace ALibrary
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems[0].SubItems[0].Text == "English")
+            {
+
+            }
             pictureBox2.Visible = false;
+            
             ;//seçilen öğenin değişmesi durumunda çalışır.
         }
 
@@ -370,46 +739,45 @@ namespace ALibrary
             try
             {
 
-                UserDAO userSignUpDAO = new UserDAO();
-                userSignUpDAO.UserName = textBox_UserName.Text;
-                userSignUpDAO.Password = textBox_Password.Text;
-                userSignUpDAO.Gender = "Women";
+                UserName = textBox_UserName.Text;
+                Password = textBox_Password.Text;
+                Gender = "Women";
 
                 if (radioButton_Man.Checked)
                 {
-                    userSignUpDAO.Gender = "Man";
+                    Gender = "Man";
                 }
                 if (radioButton_Women.Checked)
                 {
-                    userSignUpDAO.Gender = "Women";
+                    Gender = "Women";
                 }
 
-                userSignUpDAO.DateOfBirth =GetDate();
-                userSignUpDAO.EducationStatus = comboBox_EducationStatus.Text;
-                userSignUpDAO.MaritalStatus = "Single";
+                DateOfBirth =GetDate();
+                EducationStatus = comboBox_EducationStatus.Text;
+                MaritalStatus = "Single";
                 if (checkBox_Married.Checked)
                 {
-                    userSignUpDAO.MaritalStatus = "Married";
+                   MaritalStatus = "Married";
                 }
                 if (checkBox_Single.Checked)
                 {
-                    userSignUpDAO.MaritalStatus = "Single";
+                   MaritalStatus = "Single";
                 }
                 //DATA ACCESS OBJECT
-                userSignUpDAO.BookType = checkedListBox_BookTypes.Text;
-                userSignUpDAO.IdentificationNumber = maskedTextBox_IdentificationNumber.Text;
-                userSignUpDAO.Address = textBox_Address.Text;
-                userSignUpDAO.AddressType = GetAdressType();
-                userSignUpDAO.Gmail = textBox_Gmail.Text;
-                userSignUpDAO.MobilePhone = (maskedTextBox_PhoneNumber.Text);
-                userSignUpDAO.FirstName = textBox_FirstName.Text;
-                userSignUpDAO.LastName = textBox_LastName.Text;
-                userSignUpDAO.Picture = textBox_PictureUrl.Text;
+                BookType = checkedListBox_BookTypes.Text;
+                IdentificationNumber = maskedTextBox_IdentificationNumber.Text;
+                Address = textBox_Address.Text;
+                AddressType = GetAdressType();
+                Gmail = textBox_Gmail.Text;
+                MobilePhone = (maskedTextBox_PhoneNumber.Text);
+                FirstName = textBox_FirstName.Text;
+                LastName = textBox_LastName.Text;
+                Picture = textBox_PictureUrl.Text;
 
-                List<String> errors = userSignUpDAO.GetErrors();
+                List<String> errors = GetErrors();
                 if (!errors.Any())
                 {
-                    userSignUpDAO.Insert();
+                    Insert();
                 }
                 else
                 {
@@ -437,7 +805,6 @@ namespace ALibrary
                 return "";
             }
         }
-       static UserDAO userDAO = new UserDAO();
 
         private DateTime GetDate()
         {
@@ -451,7 +818,6 @@ namespace ALibrary
             }
         }
         #endregion
-        string Gender;
         private void dataGridView_SignUp_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -495,7 +861,7 @@ namespace ALibrary
             try
             {
                 int id = Convert.ToInt32(dataGridView_SignUp.CurrentRow.Cells[0].Value);
-                userDAO.Delete(id);
+               Delete(id);
                 MessageBox.Show("Deleted!");
 
             }
@@ -512,5 +878,89 @@ namespace ALibrary
 
             FillAllUserSigns();
         }
+
+        private void textBox_FirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+          
+        }
+
+        private void textBox_LastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+
+
+
+        static int prog = 0;
+
+
+        private void progr()
+        {
+            if (textBox_LastName != null)
+            {
+                prog = prog + 1;
+                progressBar_Fill.Value = prog;
+
+            }
+            if (radioButton_Man != null)
+            {
+                prog = prog + 1;
+                progressBar_Fill.Value = prog;
+
+            }
+            if (radioButton_Women != null)
+            {
+                prog = prog + 1;
+                progressBar_Fill.Value = prog;
+
+            }
+            if (comboBox_EducationStatus != null)
+            {
+                prog = prog + 1;
+                progressBar_Fill.Value = prog;
+            }
+
+            if (dateTimePicker_DateOfBirth != null)
+            {
+                prog = prog + 1;
+                progressBar_Fill.Value = prog;
+            }
+            if (checkBox_Married != null)
+            {
+                prog = prog + 1;
+                progressBar_Fill.Value = prog;
+            }
+
+            if (checkBox_Single != null)
+            {
+                prog = prog + 1;
+                progressBar_Fill.Value = prog;
+            }
+        }
+        private ListViewItem lastItemChecked;
+
+        private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            // if we have the lastItem set as checked, and it is different
+            // item than the one that fired the event, uncheck it
+            if (lastItemChecked != null && lastItemChecked.Checked
+                && lastItemChecked != listView1.Items[e.Index])
+            {
+                // uncheck the last item and store the new one
+                lastItemChecked.Checked = false;
+            }
+            // store current item
+            lastItemChecked = listView1.Items[e.Index];
+        }
+
     }
 }

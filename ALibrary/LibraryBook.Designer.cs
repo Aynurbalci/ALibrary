@@ -31,16 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox_Categoryy = new System.Windows.Forms.ComboBox();
-            this.comboBox_Languagee = new System.Windows.Forms.ComboBox();
             this.textBox_BookTitlee = new System.Windows.Forms.TextBox();
-            this.textBox_AuthorNamee = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox_BarcodeNo = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.dataGridView_GettingBooks = new System.Windows.Forms.DataGridView();
             this.button_Search = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -69,10 +60,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView_BooksInTheLibrary = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox_Categoryy = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox_AuthorNamee = new System.Windows.Forms.TextBox();
+            this.comboBox_Languagee = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -84,8 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BooksInTheLibrary)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -121,13 +119,11 @@
             // panel3
             // 
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.comboBox_Categoryy);
             this.panel3.Controls.Add(this.comboBox_Languagee);
             this.panel3.Controls.Add(this.textBox_BookTitlee);
             this.panel3.Controls.Add(this.textBox_AuthorNamee);
             this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.textBox_BarcodeNo);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label19);
@@ -137,95 +133,22 @@
             this.panel3.Size = new System.Drawing.Size(506, 368);
             this.panel3.TabIndex = 20;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(23, 27);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(125, 25);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Barcode No";
-            // 
-            // comboBox_Categoryy
-            // 
-            this.comboBox_Categoryy.FormattingEnabled = true;
-            this.comboBox_Categoryy.Location = new System.Drawing.Point(228, 193);
-            this.comboBox_Categoryy.Name = "comboBox_Categoryy";
-            this.comboBox_Categoryy.Size = new System.Drawing.Size(224, 33);
-            this.comboBox_Categoryy.TabIndex = 17;
-            // 
-            // comboBox_Languagee
-            // 
-            this.comboBox_Languagee.FormattingEnabled = true;
-            this.comboBox_Languagee.Location = new System.Drawing.Point(228, 132);
-            this.comboBox_Languagee.Name = "comboBox_Languagee";
-            this.comboBox_Languagee.Size = new System.Drawing.Size(224, 33);
-            this.comboBox_Languagee.TabIndex = 0;
-            // 
             // textBox_BookTitlee
             // 
             this.textBox_BookTitlee.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_BookTitlee.Location = new System.Drawing.Point(228, 76);
+            this.textBox_BookTitlee.Location = new System.Drawing.Point(231, 52);
             this.textBox_BookTitlee.Name = "textBox_BookTitlee";
             this.textBox_BookTitlee.Size = new System.Drawing.Size(224, 24);
             this.textBox_BookTitlee.TabIndex = 16;
             // 
-            // textBox_AuthorNamee
-            // 
-            this.textBox_AuthorNamee.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_AuthorNamee.Location = new System.Drawing.Point(228, 259);
-            this.textBox_AuthorNamee.Name = "textBox_AuthorNamee";
-            this.textBox_AuthorNamee.Size = new System.Drawing.Size(224, 24);
-            this.textBox_AuthorNamee.TabIndex = 12;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(23, 82);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(108, 25);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Book Title";
-            // 
-            // textBox_BarcodeNo
-            // 
-            this.textBox_BarcodeNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_BarcodeNo.Location = new System.Drawing.Point(228, 24);
-            this.textBox_BarcodeNo.Name = "textBox_BarcodeNo";
-            this.textBox_BarcodeNo.Size = new System.Drawing.Size(224, 24);
-            this.textBox_BarcodeNo.TabIndex = 11;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(23, 140);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 25);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Language";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(23, 259);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(137, 25);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Author Name";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(23, 201);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(99, 25);
-            this.label19.TabIndex = 7;
-            this.label19.Text = "Category";
-            // 
             // dataGridView_GettingBooks
             // 
+            this.dataGridView_GettingBooks.BackgroundColor = System.Drawing.Color.Maroon;
+            this.dataGridView_GettingBooks.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView_GettingBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_GettingBooks.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView_GettingBooks.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView_GettingBooks.GridColor = System.Drawing.Color.Maroon;
             this.dataGridView_GettingBooks.Location = new System.Drawing.Point(3, 371);
             this.dataGridView_GettingBooks.Name = "dataGridView_GettingBooks";
             this.dataGridView_GettingBooks.RowHeadersWidth = 82;
@@ -235,7 +158,7 @@
             // 
             // button_Search
             // 
-            this.button_Search.BackgroundImage = global::ALibrary.Properties.Resources.Open_folder_add_icon;
+            this.button_Search.BackgroundImage = global::ALibrary.Properties.Resources.Start_Menu_Search_icon;
             this.button_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_Search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Search.Location = new System.Drawing.Point(645, 99);
@@ -243,6 +166,7 @@
             this.button_Search.Size = new System.Drawing.Size(122, 112);
             this.button_Search.TabIndex = 2;
             this.button_Search.UseVisualStyleBackColor = true;
+            this.button_Search.Click += new System.EventHandler(this.button_Search_Click);
             // 
             // tabPage2
             // 
@@ -261,8 +185,11 @@
             // 
             // dataGridView_MyBooks
             // 
+            this.dataGridView_MyBooks.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.dataGridView_MyBooks.BackgroundColor = System.Drawing.Color.Maroon;
+            this.dataGridView_MyBooks.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView_MyBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MyBooks.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dataGridView_MyBooks.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_MyBooks.Location = new System.Drawing.Point(477, 3);
             this.dataGridView_MyBooks.Name = "dataGridView_MyBooks";
             this.dataGridView_MyBooks.RowHeadersWidth = 82;
@@ -518,18 +445,16 @@
             this.dataGridView_BooksInTheLibrary.Size = new System.Drawing.Size(1435, 1038);
             this.dataGridView_BooksInTheLibrary.TabIndex = 0;
             // 
-            // button2
+            // panel2
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::ALibrary.Properties.Resources.Peters_Sword_icon;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(1187, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 90);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1500, 349);
+            this.panel2.TabIndex = 21;
             // 
             // button1
             // 
@@ -554,16 +479,78 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // panel2
+            // button2
             // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1500, 349);
-            this.panel2.TabIndex = 21;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::ALibrary.Properties.Resources.Peters_Sword_icon;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(1187, 66);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 90);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(26, 58);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 25);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Book Title";
+            // 
+            // comboBox_Categoryy
+            // 
+            this.comboBox_Categoryy.FormattingEnabled = true;
+            this.comboBox_Categoryy.Location = new System.Drawing.Point(231, 169);
+            this.comboBox_Categoryy.Name = "comboBox_Categoryy";
+            this.comboBox_Categoryy.Size = new System.Drawing.Size(224, 33);
+            this.comboBox_Categoryy.TabIndex = 17;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(26, 235);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(137, 25);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Author Name";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(26, 116);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(108, 25);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Language";
+            // 
+            // textBox_AuthorNamee
+            // 
+            this.textBox_AuthorNamee.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_AuthorNamee.Location = new System.Drawing.Point(231, 235);
+            this.textBox_AuthorNamee.Name = "textBox_AuthorNamee";
+            this.textBox_AuthorNamee.Size = new System.Drawing.Size(224, 24);
+            this.textBox_AuthorNamee.TabIndex = 12;
+            // 
+            // comboBox_Languagee
+            // 
+            this.comboBox_Languagee.FormattingEnabled = true;
+            this.comboBox_Languagee.Location = new System.Drawing.Point(231, 108);
+            this.comboBox_Languagee.Name = "comboBox_Languagee";
+            this.comboBox_Languagee.Size = new System.Drawing.Size(224, 33);
+            this.comboBox_Languagee.TabIndex = 0;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(26, 177);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(99, 25);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Category";
             // 
             // LibraryBook
             // 
@@ -597,8 +584,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BooksInTheLibrary)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -635,20 +622,18 @@
         private System.Windows.Forms.Button button_Update;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox_Categoryy;
-        private System.Windows.Forms.ComboBox comboBox_Languagee;
         private System.Windows.Forms.TextBox textBox_BookTitlee;
         private System.Windows.Forms.Button button_Search;
-        private System.Windows.Forms.TextBox textBox_AuthorNamee;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox_BarcodeNo;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox_BarkodNo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox comboBox_Categoryy;
+        private System.Windows.Forms.ComboBox comboBox_Languagee;
+        private System.Windows.Forms.TextBox textBox_AuthorNamee;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }
