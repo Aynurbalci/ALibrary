@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,9 @@ using System.Windows.Forms;
 namespace ALibrary
 {
     public partial class LibraryBook : Form
-    {  public string UserId { get; set; }
+    {
+        #region
+        public string UserId { get; set; }
         public int BarcodeNo { get; set; }
         public String BookTitle { get; set; }
         public String PublicationYear { get; set; }
@@ -149,6 +152,8 @@ namespace ALibrary
             search3();
 
         }
+        
+        #endregion
         #region
         private void search()
         {
@@ -191,11 +196,11 @@ namespace ALibrary
 
         }
         #endregion
-        public DataTable GetBook(string bookIdStr)
+        public DataTable GetBook(string a)
         {
             try
             {
-                int bookId = Convert.ToInt32(bookIdStr);
+                int bookId = Convert.ToInt32(a);
                 OpenConnection();
                 string key = "SELECT * FROM Book WHERE BarcodeNo=@bookId";
                 SqlCommand command = new SqlCommand(key, connection);
@@ -214,6 +219,41 @@ namespace ALibrary
             }
 
         }
+        public DataTable Getpicture(string ab)
+        {
+            try
+            {
+                int pictureId = Convert.ToInt32(ab);
+                OpenConnection();
+                string key = "SELECT * FROM LibraryUser WHERE Id=@pictureId";
+                SqlCommand command = new SqlCommand(key, connection);
+                command.Parameters.AddWithValue("pictureId", pictureId);
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                CloseConnection();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+
+        }
+        public DataTable GetallPict()
+        {
+            OpenConnection();
+            string key = "SELECT * FROM LibraryUser";
+            SqlCommand command = new SqlCommand(key, connection);
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            CloseConnection();
+            return dt;
+        }
+
         public DataTable GetAllBook()
         {
             OpenConnection();
@@ -235,6 +275,19 @@ namespace ALibrary
         private void LibraryBook_Load(object sender, EventArgs e)
         {
             FillAllBook();
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Resources", UserPicture);
+
+            if (string.IsNullOrWhiteSpace(path))
+            {
+
+                MessageBox.Show("Böyle bir resim masaüstündeki Resources klasöründe bulunamadı:" + (UserPicture == null ?  "" : UserPicture));
+                return;
+            }
+
+            Image image = Image.FromFile(path);
+            this.pictureBox2.Image = image;
+            //this.pictureBox1.Image = image;
+
         }
         private void FillAllBook()
         {
@@ -294,7 +347,6 @@ namespace ALibrary
             Application.Exit();
         }
 
-
         private void dataGridView_BooksInTheLibrary_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -353,23 +405,19 @@ namespace ALibrary
             CloseConnection();
             return dataTable;
         }
-
+       
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {            
             if (tabControl1.SelectedIndex == 1) 
             {
                 
                 dataGridView_MyBooks.DataSource =GetAllUserBooks();
-            }          
+
+            }
+
+
         }
 
-
-
-
-
-
-
-      
         public static DateTime AynurDateTimeParser(string dateString)
         {
             try
@@ -384,7 +432,9 @@ namespace ALibrary
             }
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
-
+        }
     }
 }

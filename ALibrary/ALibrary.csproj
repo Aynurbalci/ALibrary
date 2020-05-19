@@ -400,5 +400,14 @@
   <ItemGroup>
     <None Include="Resources\Start-Menu-Search-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pictures\kitap-okuyan-cocuk-daha-fazla-kazaniyor-2202890.jpg" />
+    <Content Include="Pictures\misir-uygarligi.jpg" />
+    <Content Include="Pictures\olen-esi-icin-diktigi-6-bin-agacin-sirri-17-yil-709112_7493_5_b.jpg" />
+    <Content Include="Pictures\s-974328444780d68ffa59a9628c7f78bb7ec589f8.jpg" />
+    <Content Include="Pictures\unnamed %281%29.jpg" />
+    <Content Include="Pictures\unnamed.gif" />
+    <Content Include="Pictures\unnamed.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

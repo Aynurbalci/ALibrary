@@ -731,7 +731,7 @@ namespace ALibrary
             FillAllUserSigns();
         }
 
-        //İnsert
+        //Insert
         #region
         private void SignUpInsert()
         {
@@ -826,20 +826,23 @@ namespace ALibrary
                 DataGridViewRow row = dataGridView_SignUp.Rows[rowIndex];
                 textBox_FirstName.Text = row.Cells["UserName"].ToString();
                 textBox_Password.Text = row.Cells["Password"].ToString();
+               
+                    GetDate(row);
 
-                dateTimePicker_DateOfBirth.Value = Convert.ToDateTime(row.Cells["DateOfBirth"].ToString());
-                comboBox_EducationStatus.Text = row.Cells["EducationStatus"].ToString();
+                    comboBox_EducationStatus.Text = row.Cells["EducationStatus"].ToString();
 
-                checkedListBox_BookTypes.Text = row.Cells["BookType"].ToString();
-                maskedTextBox_IdentificationNumber.Text = row.Cells["IdentificationNumber"].ToString();
-                textBox_FirstName.Text= (row.Cells["FirstName"].ToString());
-                textBox_Address.Text = row.Cells["Address"].ToString();
-                listBox_AddressType.Text = row.Cells["AddressType"].ToString();
-                textBox_LastName.Text = row.Cells["LastName"].ToString();
-                textBox_Gmail.Text = row.Cells["Gmail"].ToString();
-                maskedTextBox_PhoneNumber.Text = row.Cells["MobilePhone"].ToString();
-                textBox_PictureUrl.Text = row.Cells["Picture"].ToString();
+                    checkedListBox_BookTypes.Text = row.Cells["BookType"].ToString();
+                    maskedTextBox_IdentificationNumber.Text = row.Cells["IdentificationNumber"].ToString();
+                    textBox_FirstName.Text = (row.Cells["FirstName"].ToString());
+                    textBox_Address.Text = row.Cells["Address"].ToString();
+                    listBox_AddressType.Text = row.Cells["AddressType"].ToString();
+                    textBox_LastName.Text = row.Cells["LastName"].ToString();
+                    textBox_Gmail.Text = row.Cells["Gmail"].ToString();
+                    maskedTextBox_PhoneNumber.Text = row.Cells["MobilePhone"].ToString();
+                    textBox_PictureUrl.Text = row.Cells["Picture"].ToString();
 
+            
+              
 
             }
             catch (Exception ex)
@@ -848,6 +851,20 @@ namespace ALibrary
 
             }
           
+        }
+
+        private void GetDate(DataGridViewRow row)
+        {
+            try
+            {
+                dateTimePicker_DateOfBirth.Value = Convert.ToDateTime(row.Cells["DateOfBirth"].ToString());
+
+            }
+            catch (Exception ay)
+            {
+
+               
+            }
         }
 
         private void button_PictureSelect_Click(object sender, EventArgs e)
@@ -962,5 +979,9 @@ namespace ALibrary
             lastItemChecked = listView1.Items[e.Index];
         }
 
+        private void button_PictureAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

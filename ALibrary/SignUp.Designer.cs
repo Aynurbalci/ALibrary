@@ -500,6 +500,7 @@
             this.button_PictureAdd.TabIndex = 29;
             this.toolTip1.SetToolTip(this.button_PictureAdd, "save picture");
             this.button_PictureAdd.UseVisualStyleBackColor = true;
+            this.button_PictureAdd.Click += new System.EventHandler(this.button_PictureAdd_Click);
             // 
             // button3
             // 
@@ -809,7 +810,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1473, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1473, 24);
             this.menuStrip1.TabIndex = 27;
             // 
             // toolStripMenuItem1
@@ -817,7 +818,7 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(20, 40);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(20, 20);
             // 
             // toolStripMenuItem2
             // 

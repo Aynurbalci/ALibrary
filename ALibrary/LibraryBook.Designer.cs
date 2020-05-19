@@ -31,7 +31,14 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBox_Categoryy = new System.Windows.Forms.ComboBox();
+            this.comboBox_Languagee = new System.Windows.Forms.ComboBox();
             this.textBox_BookTitlee = new System.Windows.Forms.TextBox();
+            this.textBox_AuthorNamee = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.dataGridView_GettingBooks = new System.Windows.Forms.DataGridView();
             this.button_Search = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -64,13 +71,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox_Categoryy = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox_AuthorNamee = new System.Windows.Forms.TextBox();
-            this.comboBox_Languagee = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -133,6 +134,22 @@
             this.panel3.Size = new System.Drawing.Size(506, 368);
             this.panel3.TabIndex = 20;
             // 
+            // comboBox_Categoryy
+            // 
+            this.comboBox_Categoryy.FormattingEnabled = true;
+            this.comboBox_Categoryy.Location = new System.Drawing.Point(231, 169);
+            this.comboBox_Categoryy.Name = "comboBox_Categoryy";
+            this.comboBox_Categoryy.Size = new System.Drawing.Size(224, 33);
+            this.comboBox_Categoryy.TabIndex = 17;
+            // 
+            // comboBox_Languagee
+            // 
+            this.comboBox_Languagee.FormattingEnabled = true;
+            this.comboBox_Languagee.Location = new System.Drawing.Point(231, 108);
+            this.comboBox_Languagee.Name = "comboBox_Languagee";
+            this.comboBox_Languagee.Size = new System.Drawing.Size(224, 33);
+            this.comboBox_Languagee.TabIndex = 0;
+            // 
             // textBox_BookTitlee
             // 
             this.textBox_BookTitlee.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -140,6 +157,50 @@
             this.textBox_BookTitlee.Name = "textBox_BookTitlee";
             this.textBox_BookTitlee.Size = new System.Drawing.Size(224, 24);
             this.textBox_BookTitlee.TabIndex = 16;
+            // 
+            // textBox_AuthorNamee
+            // 
+            this.textBox_AuthorNamee.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_AuthorNamee.Location = new System.Drawing.Point(231, 235);
+            this.textBox_AuthorNamee.Name = "textBox_AuthorNamee";
+            this.textBox_AuthorNamee.Size = new System.Drawing.Size(224, 24);
+            this.textBox_AuthorNamee.TabIndex = 12;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(26, 58);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 25);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Book Title";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(26, 116);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(108, 25);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Language";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(26, 235);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(137, 25);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Author Name";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(26, 177);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(99, 25);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Category";
             // 
             // dataGridView_GettingBooks
             // 
@@ -447,6 +508,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.button2);
@@ -455,6 +517,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1500, 349);
             this.panel2.TabIndex = 21;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
@@ -475,7 +538,7 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(285, 349);
+            this.pictureBox2.Size = new System.Drawing.Size(369, 349);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
@@ -492,65 +555,12 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label15
+            // textBox1
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(26, 58);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(108, 25);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Book Title";
-            // 
-            // comboBox_Categoryy
-            // 
-            this.comboBox_Categoryy.FormattingEnabled = true;
-            this.comboBox_Categoryy.Location = new System.Drawing.Point(231, 169);
-            this.comboBox_Categoryy.Name = "comboBox_Categoryy";
-            this.comboBox_Categoryy.Size = new System.Drawing.Size(224, 33);
-            this.comboBox_Categoryy.TabIndex = 17;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(26, 235);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(137, 25);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Author Name";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(26, 116);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 25);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Language";
-            // 
-            // textBox_AuthorNamee
-            // 
-            this.textBox_AuthorNamee.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_AuthorNamee.Location = new System.Drawing.Point(231, 235);
-            this.textBox_AuthorNamee.Name = "textBox_AuthorNamee";
-            this.textBox_AuthorNamee.Size = new System.Drawing.Size(224, 24);
-            this.textBox_AuthorNamee.TabIndex = 12;
-            // 
-            // comboBox_Languagee
-            // 
-            this.comboBox_Languagee.FormattingEnabled = true;
-            this.comboBox_Languagee.Location = new System.Drawing.Point(231, 108);
-            this.comboBox_Languagee.Name = "comboBox_Languagee";
-            this.comboBox_Languagee.Size = new System.Drawing.Size(224, 33);
-            this.comboBox_Languagee.TabIndex = 0;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(26, 177);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(99, 25);
-            this.label19.TabIndex = 7;
-            this.label19.Text = "Category";
+            this.textBox1.Location = new System.Drawing.Point(522, 121);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 31);
+            this.textBox1.TabIndex = 4;
             // 
             // LibraryBook
             // 
@@ -585,6 +595,7 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BooksInTheLibrary)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -635,5 +646,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
