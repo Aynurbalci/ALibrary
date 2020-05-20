@@ -80,6 +80,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button_Facebook = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -140,6 +141,7 @@
             // 
             this.tabPage_HomePage.BackColor = System.Drawing.Color.Transparent;
             this.tabPage_HomePage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage_HomePage.Controls.Add(this.button_Facebook);
             this.tabPage_HomePage.Controls.Add(this.buttons);
             this.tabPage_HomePage.Controls.Add(this.label10);
             this.tabPage_HomePage.Controls.Add(this.label9);
@@ -705,6 +707,20 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button_Facebook
+            // 
+            this.button_Facebook.BackColor = System.Drawing.Color.Black;
+            this.button_Facebook.BackgroundImage = global::ALibrary.Properties.Resources.social_facebook_button_blue_icon1;
+            this.button_Facebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_Facebook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Facebook.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button_Facebook.Location = new System.Drawing.Point(1258, 1069);
+            this.button_Facebook.Name = "button_Facebook";
+            this.button_Facebook.Size = new System.Drawing.Size(193, 187);
+            this.button_Facebook.TabIndex = 27;
+            this.button_Facebook.UseVisualStyleBackColor = false;
+            this.button_Facebook.Click += new System.EventHandler(this.button_Facebook_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -810,6 +826,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_Facebook;
     }
 }
 

@@ -43,8 +43,6 @@
             this.button_Search = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView_MyBooks = new System.Windows.Forms.DataGridView();
-            this.button_Update = new System.Windows.Forms.Button();
-            this.button_Delete = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox_BarkodNo = new System.Windows.Forms.TextBox();
@@ -71,7 +69,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -235,8 +232,6 @@
             this.tabPage2.BackgroundImage = global::ALibrary.Properties.Resources.yildizlarin_sesi_3_stR6_cover;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.dataGridView_MyBooks);
-            this.tabPage2.Controls.Add(this.button_Update);
-            this.tabPage2.Controls.Add(this.button_Delete);
             this.tabPage2.Location = new System.Drawing.Point(8, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -257,30 +252,6 @@
             this.dataGridView_MyBooks.RowTemplate.Height = 33;
             this.dataGridView_MyBooks.Size = new System.Drawing.Size(1004, 892);
             this.dataGridView_MyBooks.TabIndex = 0;
-            // 
-            // button_Update
-            // 
-            this.button_Update.BackColor = System.Drawing.Color.Transparent;
-            this.button_Update.BackgroundImage = global::ALibrary.Properties.Resources.Actions_edit_clear_history_icon;
-            this.button_Update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Update.Location = new System.Drawing.Point(89, 641);
-            this.button_Update.Name = "button_Update";
-            this.button_Update.Size = new System.Drawing.Size(162, 156);
-            this.button_Update.TabIndex = 2;
-            this.button_Update.UseVisualStyleBackColor = false;
-            // 
-            // button_Delete
-            // 
-            this.button_Delete.BackColor = System.Drawing.Color.Transparent;
-            this.button_Delete.BackgroundImage = global::ALibrary.Properties.Resources.Actions_edit_clear_icon;
-            this.button_Delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Delete.Location = new System.Drawing.Point(89, 186);
-            this.button_Delete.Name = "button_Delete";
-            this.button_Delete.Size = new System.Drawing.Size(162, 156);
-            this.button_Delete.TabIndex = 1;
-            this.button_Delete.UseVisualStyleBackColor = false;
             // 
             // tabPage3
             // 
@@ -508,7 +479,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.button2);
@@ -526,7 +496,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(1348, 66);
+            this.button1.Location = new System.Drawing.Point(1412, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 90);
             this.button1.TabIndex = 0;
@@ -548,19 +518,12 @@
             this.button2.BackgroundImage = global::ALibrary.Properties.Resources.Peters_Sword_icon;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(1187, 66);
+            this.button2.Location = new System.Drawing.Point(1312, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 90);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(522, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 31);
-            this.textBox1.TabIndex = 4;
             // 
             // LibraryBook
             // 
@@ -595,7 +558,6 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BooksInTheLibrary)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -630,8 +592,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button_Update;
-        private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBox_BookTitlee;
         private System.Windows.Forms.Button button_Search;
@@ -646,6 +606,5 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

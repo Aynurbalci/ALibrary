@@ -38,7 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button_Login = new System.Windows.Forms.Button();
-            this.button_Facebook = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -132,14 +131,6 @@
             this.button_Login.MouseLeave += new System.EventHandler(this.button_Login_MouseLeave_1);
             this.button_Login.MouseHover += new System.EventHandler(this.button_Login_MouseHover_1);
             // 
-            // button_Facebook
-            // 
-            this.button_Facebook.BackColor = System.Drawing.Color.Transparent;
-            this.button_Facebook.BackgroundImage = global::ALibrary.Properties.Resources.social_facebook_button_blue_icon1;
-            resources.ApplyResources(this.button_Facebook, "button_Facebook");
-            this.button_Facebook.Name = "button_Facebook";
-            this.button_Facebook.UseVisualStyleBackColor = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ALibrary.Properties.Resources.DJ_Kedi_03_Muzikliste;
@@ -152,7 +143,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button_Facebook);
             this.Controls.Add(this.linkLabel_Home);
             this.Controls.Add(this.linkLabel_Password);
             this.Controls.Add(this.linkLabel1);
@@ -176,7 +166,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button_Facebook;
         private System.Windows.Forms.LinkLabel linkLabel_Home;
         private System.Windows.Forms.LinkLabel linkLabel_Password;
         private System.Windows.Forms.LinkLabel linkLabel1;

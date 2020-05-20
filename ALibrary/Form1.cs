@@ -22,12 +22,13 @@ namespace ALibrary
         public void Sound()
         {
             System.Media.SoundPlayer sound = new System.Media.SoundPlayer();
-            sound.SoundLocation = "hauser-adagio-albinoni.wav";
+            sound.SoundLocation = "Kaplan Sesi _ Kaplan Ses Efekti.wav";
             sound.Play();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            Sound();
+           
         }
 
       
@@ -49,6 +50,13 @@ namespace ALibrary
 
             SignUp signUp = new SignUp();
             signUp.Show();
+            this.Hide();
+        }
+
+        private void button_Facebook_Click(object sender, EventArgs e)
+        {
+            Facebooklogin facebooklogin = new Facebooklogin();
+            facebooklogin.Show();
             this.Hide();
         }
     }

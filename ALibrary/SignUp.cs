@@ -376,8 +376,6 @@ namespace ALibrary
         }
         #endregion
 
-
-
         public SignUp()
         {
             InitializeComponent();
@@ -387,7 +385,6 @@ namespace ALibrary
         {
             FinalExamProperties();
             FillAllUserSigns();
-            progr();
 
         }
 
@@ -466,8 +463,8 @@ namespace ALibrary
             pictureBox_Picturee.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_Picturee.Image = Properties.Resources.Books_2_icon;
             //ProgressBar>>property(value,step,maximum,minimum)
-            progressBar_Fill.Value = 0;
-           progressBar_Fill.Step = 0;
+           progressBar_Fill.Value = 0;
+          progressBar_Fill.Step = 0;
           progressBar_Fill.Maximum = 10;
           progressBar_Fill.Minimum = 0;
 
@@ -529,7 +526,6 @@ namespace ALibrary
         private void button_SignUp_Click(object sender, EventArgs e)
         {
             SignUpSignIn(); //button_SignUp_Click e basınca gerçekleşmesini istediğimiz olayları yazmamızı sağlar.
-
         }
         private void button_SignUp_MouseHover(object sender, EventArgs e)
         {
@@ -576,11 +572,7 @@ namespace ALibrary
         private void dateTimePicker_DateOfBirth_ValueChanged(object sender, EventArgs e)
         {
             button_SignUp.BackColor = Color.Yellow;//Tarih değeri değiştiği zaman etkinleşir.
-            if (dateTimePicker_DateOfBirth != null)
-            {
-                prog = prog + 1;
-                progressBar_Fill.Value = prog;
-            }
+          
         }
 
         #endregion
@@ -730,7 +722,6 @@ namespace ALibrary
             SignUpInsert();
             FillAllUserSigns();
         }
-
         //Insert
         #region
         private void SignUpInsert()
@@ -862,7 +853,7 @@ namespace ALibrary
             }
             catch (Exception ay)
             {
-
+                throw;
                
             }
         }
@@ -914,55 +905,7 @@ namespace ALibrary
 
         }
 
-
-
-
-        static int prog = 0;
-
-
-        private void progr()
-        {
-            if (textBox_LastName != null)
-            {
-                prog = prog + 1;
-                progressBar_Fill.Value = prog;
-
-            }
-            if (radioButton_Man != null)
-            {
-                prog = prog + 1;
-                progressBar_Fill.Value = prog;
-
-            }
-            if (radioButton_Women != null)
-            {
-                prog = prog + 1;
-                progressBar_Fill.Value = prog;
-
-            }
-            if (comboBox_EducationStatus != null)
-            {
-                prog = prog + 1;
-                progressBar_Fill.Value = prog;
-            }
-
-            if (dateTimePicker_DateOfBirth != null)
-            {
-                prog = prog + 1;
-                progressBar_Fill.Value = prog;
-            }
-            if (checkBox_Married != null)
-            {
-                prog = prog + 1;
-                progressBar_Fill.Value = prog;
-            }
-
-            if (checkBox_Single != null)
-            {
-                prog = prog + 1;
-                progressBar_Fill.Value = prog;
-            }
-        }
+        #region
         private ListViewItem lastItemChecked;
 
         private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -978,10 +921,31 @@ namespace ALibrary
             // store current item
             lastItemChecked = listView1.Items[e.Index];
         }
+        #endregion
 
-        private void button_PictureAdd_Click(object sender, EventArgs e)
+        #region
+        private void textBox_UserName_Click(object sender, EventArgs e)
         {
+            progressBar_Fill.Value = 3;
+        }
+
+        private void textBox_Gmail_Click(object sender, EventArgs e)
+        {
+            progressBar_Fill.Value = 6;
 
         }
+        private void textBox_Password_Click(object sender, EventArgs e)
+        {
+            progressBar_Fill.Value = 10;
+
+        }
+        #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
+
+
 }

@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookSystem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BookSystem.Designer.cs">
-      <DependentUpon>BookSystem.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChangeUsername.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChangeUsername.Designer.cs">
       <DependentUpon>ChangeUsername.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facebooklogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facebooklogin.Designer.cs">
+      <DependentUpon>Facebooklogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -91,11 +91,11 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BookSystem.resx">
-      <DependentUpon>BookSystem.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChangeUsername.resx">
       <DependentUpon>ChangeUsername.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facebooklogin.resx">
+      <DependentUpon>Facebooklogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

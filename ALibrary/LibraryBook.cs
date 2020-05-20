@@ -277,7 +277,7 @@ namespace ALibrary
             FillAllBook();
             string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Resources", UserPicture);
 
-            if (string.IsNullOrWhiteSpace(path))
+            if (!File.Exists(path))
             {
 
                 MessageBox.Show("Böyle bir resim masaüstündeki Resources klasöründe bulunamadı:" + (UserPicture == null ?  "" : UserPicture));
@@ -293,7 +293,6 @@ namespace ALibrary
         {
             dataGridView_BooksInTheLibrary.DataSource =GetAllBook();
         }
-
 
         #region
         bool move;
@@ -325,6 +324,7 @@ namespace ALibrary
 
 
         }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {

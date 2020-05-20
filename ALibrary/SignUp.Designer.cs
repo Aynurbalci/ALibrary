@@ -143,6 +143,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox_Picturee = new System.Windows.Forms.PictureBox();
             this.textBox_PictureUrl = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_BookNumber)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage_UserRegistration.SuspendLayout();
@@ -221,6 +222,7 @@
             this.textBox_Password.Size = new System.Drawing.Size(312, 31);
             this.textBox_Password.TabIndex = 32;
             this.toolTip1.SetToolTip(this.textBox_Password, "mandatory field");
+            this.textBox_Password.Click += new System.EventHandler(this.textBox_Password_Click);
             // 
             // textBox_Address
             // 
@@ -344,7 +346,6 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.First,
             this.Last});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Right;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             listViewItem1.StateImageIndex = 0;
@@ -432,8 +433,7 @@
             this.progressBar_Fill.MarqueeAnimationSpeed = 10;
             this.progressBar_Fill.Name = "progressBar_Fill";
             this.progressBar_Fill.Size = new System.Drawing.Size(445, 25);
-            this.progressBar_Fill.TabIndex = 24;
-            this.progressBar_Fill.Value = 1;
+            this.progressBar_Fill.TabIndex = 48;
             this.progressBar_Fill.Click += new System.EventHandler(this.progressBar_Fill_Click);
             // 
             // toolTip1
@@ -467,6 +467,7 @@
             this.textBox_Gmail.Size = new System.Drawing.Size(312, 31);
             this.textBox_Gmail.TabIndex = 33;
             this.toolTip1.SetToolTip(this.textBox_Gmail, "please enter gmail");
+            this.textBox_Gmail.Click += new System.EventHandler(this.textBox_Gmail_Click);
             // 
             // textBox_UserName
             // 
@@ -475,6 +476,7 @@
             this.textBox_UserName.Size = new System.Drawing.Size(312, 31);
             this.textBox_UserName.TabIndex = 31;
             this.toolTip1.SetToolTip(this.textBox_UserName, "please enter your User Name");
+            this.textBox_UserName.Click += new System.EventHandler(this.textBox_UserName_Click);
             // 
             // button_PictureSelect
             // 
@@ -500,7 +502,6 @@
             this.button_PictureAdd.TabIndex = 29;
             this.toolTip1.SetToolTip(this.button_PictureAdd, "save picture");
             this.button_PictureAdd.UseVisualStyleBackColor = true;
-            this.button_PictureAdd.Click += new System.EventHandler(this.button_PictureAdd_Click);
             // 
             // button3
             // 
@@ -772,6 +773,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.pictureBox_Picture);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.listView1);
@@ -784,7 +786,7 @@
             // 
             // pictureBox_Picture
             // 
-            this.pictureBox_Picture.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox_Picture.Location = new System.Drawing.Point(-8, 0);
             this.pictureBox_Picture.Name = "pictureBox_Picture";
             this.pictureBox_Picture.Size = new System.Drawing.Size(746, 842);
             this.pictureBox_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -868,6 +870,16 @@
             this.textBox_PictureUrl.Size = new System.Drawing.Size(100, 31);
             this.textBox_PictureUrl.TabIndex = 31;
             this.textBox_PictureUrl.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(950, 608);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 55);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SignUp
             // 
@@ -978,5 +990,6 @@
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.Button button1;
     }
 }
