@@ -19,7 +19,7 @@ using System.Drawing.Imaging;
 namespace ALibrary
 {
     public partial class SignUp : Form
-    { 
+    {
         //insert,....
         #region
         public static readonly string ConnectionKey = "server=(localdb)\\mssqllocaldb;Database=AynurLibraryDb;Integrated security = true";
@@ -390,7 +390,7 @@ namespace ALibrary
 
         private void FillAllUserSigns()
         {
-            dataGridView_SignUp.DataSource =GetAllUserSignUp();
+            dataGridView_SignUp.DataSource = GetAllUserSignUp();
         }
 
         //Finalexamproperties
@@ -439,7 +439,7 @@ namespace ALibrary
             listView1.MultiSelect = false;
             listView1.Sorting = System.Windows.Forms.SortOrder.None;
             listView1.BorderStyle = BorderStyle.Fixed3D;
-           listView1.CheckBoxes = true;
+            listView1.CheckBoxes = true;
             listView1.FullRowSelect = false;
             listView1.GridLines = false;
             listView1.View = View.Details;
@@ -451,7 +451,7 @@ namespace ALibrary
             notifyIcon1.BalloonTipIcon = ToolTipIcon.None;
             notifyIcon1.BalloonTipText = "Sign Up!";
             notifyIcon1.BalloonTipTitle = "Sign";
-            
+
             notifyIcon1.Icon = SystemIcons.Application;
             //numericUpDown>>property(value)
             numericUpDown_BookNumber.Value = new decimal(new int[] {
@@ -463,10 +463,10 @@ namespace ALibrary
             pictureBox_Picturee.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_Picturee.Image = Properties.Resources.Books_2_icon;
             //ProgressBar>>property(value,step,maximum,minimum)
-           progressBar_Fill.Value = 0;
-          progressBar_Fill.Step = 0;
-          progressBar_Fill.Maximum = 10;
-          progressBar_Fill.Minimum = 0;
+            progressBar_Fill.Value = 0;
+            progressBar_Fill.Step = 0;
+            progressBar_Fill.Maximum = 10;
+            progressBar_Fill.Minimum = 0;
 
             //Radiobutton>>property(checked,text)
             radioButton_Women.Text = "Women";
@@ -488,19 +488,19 @@ namespace ALibrary
             groupBox_Gender.Text = "Gender";
             //MenuStrip>>property(items>>toolStripMenuItem>>property(text,dropdownıtems>>property(text)))
             menuStrip1.Text = "Alibrary";
-            menuStrip1.Items.AddRange(new ToolStripItem[] {aToolStripMenuItem});
+            menuStrip1.Items.AddRange(new ToolStripItem[] { aToolStripMenuItem });
             aToolStripMenuItem.Text = "Alibrary";
             aToolStripMenuItem.DropDown = contextMenuStrip1;
             //errorProvider>>property(icon)
             errorProvider1.SetError(textBox_Gmail, "mandatory field");//iconu özellikler kısmından ekledim
-           //Timer>>property(interval)
+                                                                      //Timer>>property(interval)
             timer1.Interval = 100;
 
             //DataGridView>>property(multiSelect,SelectionMode,BorderStyle,GridColor,DataSource)
-              dataGridView_SignUp.MultiSelect = false;
-              dataGridView_SignUp.GridColor = Color.DarkRed;
+            dataGridView_SignUp.MultiSelect = false;
+            dataGridView_SignUp.GridColor = Color.DarkRed;
             dataGridView_SignUp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-              dataGridView_SignUp.BorderStyle = BorderStyle.Fixed3D;
+            dataGridView_SignUp.BorderStyle = BorderStyle.Fixed3D;
             dataGridView_SignUp.DataSource = "(localdb)\\mssqllocaldb";
 
 
@@ -517,11 +517,11 @@ namespace ALibrary
         private void button_SignUp_EnabledChanged(object sender, EventArgs e)
         {
             button_SignUp.Enabled = true; //Enable özelliğinin değiştirilmesi durumunda bu parametre çalışır.
-           
+
         }
         private void button_SignUp_VisibleChanged(object sender, EventArgs e)
         {
-            button_SignUp.BackColor=Color.Red;//Visible özelliği değiştirilince çalışır.
+            button_SignUp.BackColor = Color.Red;//Visible özelliği değiştirilince çalışır.
         }
         private void button_SignUp_Click(object sender, EventArgs e)
         {
@@ -552,7 +552,7 @@ namespace ALibrary
         }
         private void checkedListBox_BookTypes_SelectedValueChanged(object sender, EventArgs e)
         {
-                checkedListBox_BookTypes.BackColor = Color.White;//SelectedValue özelliği değiştiğinde gerçekleşir.
+            checkedListBox_BookTypes.BackColor = Color.White;//SelectedValue özelliği değiştiğinde gerçekleşir.
 
         }
         #endregion
@@ -572,13 +572,13 @@ namespace ALibrary
         private void dateTimePicker_DateOfBirth_ValueChanged(object sender, EventArgs e)
         {
             button_SignUp.BackColor = Color.Yellow;//Tarih değeri değiştiği zaman etkinleşir.
-          
+
         }
 
         #endregion
         //Label>>events(VisibleChanged)
         #region
-         private void label_UserName_VisibleChanged(object sender, EventArgs e)
+        private void label_UserName_VisibleChanged(object sender, EventArgs e)
         {
             textBox_FirstName.BackColor = Color.DarkKhaki;//Labelin visible özelliği değiştinde etkinleşir.
         }
@@ -603,18 +603,54 @@ namespace ALibrary
         #region
         private void listView1_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            pictureBox2.Visible = false;//list viewe tıklama yapma durumunda aktifleşir yani öğe seçilmesi gerekir.
-            pictureBox_Picture.Visible = true;
-        }
+            //pictureBox2.Visible = false;//list viewe tıklama yapma durumunda aktifleşir yani öğe seçilmesi gerekir.
+            //pictureBox_Picture.Visible = true;
+           // panel_AynurPanel.BackgroundImage = Properties.Resources.eng;
+            panel_AynurPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ListViewItem myItem = null;
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listView1.SelectedItems[0].SubItems[0].Text == "English")
+            foreach (ListViewItem item in listView1.Items)
             {
+                if (item.Checked)
+                {
+                    myItem = item;
+                    break;
+                }
+            }
+
+            if (myItem == null)
+            {
+                panel_AynurPanel.BackgroundImage = null;
+                return;
+            }
+
+
+            string str = myItem.Text.Trim();
+            switch (str)
+            {
+                case "English":
+                    panel_AynurPanel.BackgroundImage = Properties.Resources.eng;
+                    break;
+                case "Turkish":
+                    panel_AynurPanel.BackgroundImage = Properties.Resources.turk;
+                    break;
+                default:
+                    panel_AynurPanel.BackgroundImage = null;
+                    break;
+                    //}
 
             }
-            pictureBox2.Visible = false;
-            
+        }
+
+            private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (listView1.SelectedItems[0].Text.Equals("English"))
+            //{
+            //   
+            //}
+
+           // pictureBox2.Visible = false;
+
             ;//seçilen öğenin değişmesi durumunda çalışır.
         }
 
@@ -743,16 +779,16 @@ namespace ALibrary
                     Gender = "Women";
                 }
 
-                DateOfBirth =GetDate();
+                DateOfBirth = GetDate();
                 EducationStatus = comboBox_EducationStatus.Text;
                 MaritalStatus = "Single";
                 if (checkBox_Married.Checked)
                 {
-                   MaritalStatus = "Married";
+                    MaritalStatus = "Married";
                 }
                 if (checkBox_Single.Checked)
                 {
-                   MaritalStatus = "Single";
+                    MaritalStatus = "Single";
                 }
                 //DATA ACCESS OBJECT
                 BookType = checkedListBox_BookTypes.Text;
@@ -801,7 +837,8 @@ namespace ALibrary
         {
             try
             {
-                return dateTimePicker_DateOfBirth.Value;            }
+                return dateTimePicker_DateOfBirth.Value;
+            }
             catch (Exception)
             {
 
@@ -817,23 +854,23 @@ namespace ALibrary
                 DataGridViewRow row = dataGridView_SignUp.Rows[rowIndex];
                 textBox_FirstName.Text = row.Cells["UserName"].ToString();
                 textBox_Password.Text = row.Cells["Password"].ToString();
-               
-                    GetDate(row);
 
-                    comboBox_EducationStatus.Text = row.Cells["EducationStatus"].ToString();
+                GetDate(row);
 
-                    checkedListBox_BookTypes.Text = row.Cells["BookType"].ToString();
-                    maskedTextBox_IdentificationNumber.Text = row.Cells["IdentificationNumber"].ToString();
-                    textBox_FirstName.Text = (row.Cells["FirstName"].ToString());
-                    textBox_Address.Text = row.Cells["Address"].ToString();
-                    listBox_AddressType.Text = row.Cells["AddressType"].ToString();
-                    textBox_LastName.Text = row.Cells["LastName"].ToString();
-                    textBox_Gmail.Text = row.Cells["Gmail"].ToString();
-                    maskedTextBox_PhoneNumber.Text = row.Cells["MobilePhone"].ToString();
-                    textBox_PictureUrl.Text = row.Cells["Picture"].ToString();
+                comboBox_EducationStatus.Text = row.Cells["EducationStatus"].ToString();
 
-            
-              
+                checkedListBox_BookTypes.Text = row.Cells["BookType"].ToString();
+                maskedTextBox_IdentificationNumber.Text = row.Cells["IdentificationNumber"].ToString();
+                textBox_FirstName.Text = (row.Cells["FirstName"].ToString());
+                textBox_Address.Text = row.Cells["Address"].ToString();
+                listBox_AddressType.Text = row.Cells["AddressType"].ToString();
+                textBox_LastName.Text = row.Cells["LastName"].ToString();
+                textBox_Gmail.Text = row.Cells["Gmail"].ToString();
+                maskedTextBox_PhoneNumber.Text = row.Cells["MobilePhone"].ToString();
+                textBox_PictureUrl.Text = row.Cells["Picture"].ToString();
+
+
+
 
             }
             catch (Exception ex)
@@ -841,7 +878,7 @@ namespace ALibrary
                 MessageBox.Show(ex.ToString());
 
             }
-          
+
         }
 
         private void GetDate(DataGridViewRow row)
@@ -854,7 +891,7 @@ namespace ALibrary
             catch (Exception ay)
             {
                 throw;
-               
+
             }
         }
 
@@ -869,14 +906,14 @@ namespace ALibrary
             try
             {
                 int id = Convert.ToInt32(dataGridView_SignUp.CurrentRow.Cells[0].Value);
-               Delete(id);
+                Delete(id);
                 MessageBox.Show("Deleted!");
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }          
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -893,7 +930,7 @@ namespace ALibrary
             {
                 e.Handled = true;
             }
-          
+
         }
 
         private void textBox_LastName_KeyPress(object sender, KeyPressEventArgs e)
@@ -920,7 +957,19 @@ namespace ALibrary
             }
             // store current item
             lastItemChecked = listView1.Items[e.Index];
+
+
+
+            // && MyEquals(lastItemChecked.Text, "English")
+
         }
+
+        private bool MyEquals(string str1, string str2)
+        {
+            return string.Equals(str1, str2, StringComparison.InvariantCultureIgnoreCase);
+        }
+
+
         #endregion
 
         #region
@@ -943,7 +992,7 @@ namespace ALibrary
 
         private void button1_Click(object sender, EventArgs e)
         {
-          
+
         }
     }
 

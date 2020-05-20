@@ -131,8 +131,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView_SignUp = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox_Picture = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,6 +142,7 @@
             this.pictureBox_Picturee = new System.Windows.Forms.PictureBox();
             this.textBox_PictureUrl = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel_AynurPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_BookNumber)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage_UserRegistration.SuspendLayout();
@@ -151,8 +150,6 @@
             this.tabPage_UserRegControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SignUp)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Picturee)).BeginInit();
@@ -773,9 +770,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel_AynurPanel);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.pictureBox_Picture);
-            this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.listView1);
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
             this.tabPage1.Name = "tabPage1";
@@ -784,35 +780,14 @@
             this.tabPage1.Text = "Nationality";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // pictureBox_Picture
-            // 
-            this.pictureBox_Picture.Location = new System.Drawing.Point(-8, 0);
-            this.pictureBox_Picture.Name = "pictureBox_Picture";
-            this.pictureBox_Picture.Size = new System.Drawing.Size(746, 842);
-            this.pictureBox_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Picture.TabIndex = 22;
-            this.pictureBox_Picture.TabStop = false;
-            this.pictureBox_Picture.Visible = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ALibrary.Properties.Resources.tenor__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(118, 113);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(446, 477);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1473, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1473, 48);
             this.menuStrip1.TabIndex = 27;
             // 
             // toolStripMenuItem1
@@ -820,7 +795,7 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(20, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(20, 40);
             // 
             // toolStripMenuItem2
             // 
@@ -881,6 +856,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel_AynurPanel
+            // 
+            this.panel_AynurPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_AynurPanel.Location = new System.Drawing.Point(0, 0);
+            this.panel_AynurPanel.Name = "panel_AynurPanel";
+            this.panel_AynurPanel.Size = new System.Drawing.Size(750, 837);
+            this.panel_AynurPanel.TabIndex = 24;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -910,8 +893,6 @@
             this.tabPage_UserRegControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SignUp)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -973,8 +954,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_LastName;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox_Picture;
         private System.Windows.Forms.ColumnHeader First;
         private System.Windows.Forms.ColumnHeader Last;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -991,5 +970,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel_AynurPanel;
     }
 }
