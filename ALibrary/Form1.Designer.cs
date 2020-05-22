@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_HomePage = new System.Windows.Forms.TabPage();
+            this.button_Facebook = new System.Windows.Forms.Button();
             this.buttons = new System.Windows.Forms.Button();
             this.ımageList3 = new System.Windows.Forms.ImageList(this.components);
             this.label10 = new System.Windows.Forms.Label();
@@ -80,7 +81,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button_Facebook = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -161,6 +161,20 @@
             this.tabPage_HomePage.Size = new System.Drawing.Size(1478, 1304);
             this.tabPage_HomePage.TabIndex = 0;
             this.tabPage_HomePage.Text = "Home Page";
+            // 
+            // button_Facebook
+            // 
+            this.button_Facebook.BackColor = System.Drawing.Color.Black;
+            this.button_Facebook.BackgroundImage = global::ALibrary.Properties.Resources.social_facebook_button_blue_icon1;
+            this.button_Facebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_Facebook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Facebook.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button_Facebook.Location = new System.Drawing.Point(1258, 1069);
+            this.button_Facebook.Name = "button_Facebook";
+            this.button_Facebook.Size = new System.Drawing.Size(193, 187);
+            this.button_Facebook.TabIndex = 27;
+            this.button_Facebook.UseVisualStyleBackColor = false;
+            this.button_Facebook.Click += new System.EventHandler(this.button_Facebook_Click);
             // 
             // buttons
             // 
@@ -706,20 +720,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // button_Facebook
-            // 
-            this.button_Facebook.BackColor = System.Drawing.Color.Black;
-            this.button_Facebook.BackgroundImage = global::ALibrary.Properties.Resources.social_facebook_button_blue_icon1;
-            this.button_Facebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_Facebook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Facebook.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button_Facebook.Location = new System.Drawing.Point(1258, 1069);
-            this.button_Facebook.Name = "button_Facebook";
-            this.button_Facebook.Size = new System.Drawing.Size(193, 187);
-            this.button_Facebook.TabIndex = 27;
-            this.button_Facebook.UseVisualStyleBackColor = false;
-            this.button_Facebook.Click += new System.EventHandler(this.button_Facebook_Click);
             // 
             // Form1
             // 

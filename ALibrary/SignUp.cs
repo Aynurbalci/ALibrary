@@ -16,6 +16,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
+using System.Media;
 namespace ALibrary
 {
     public partial class SignUp : Form
@@ -526,6 +527,10 @@ namespace ALibrary
         private void button_SignUp_Click(object sender, EventArgs e)
         {
             SignUpSignIn(); //button_SignUp_Click e basınca gerçekleşmesini istediğimiz olayları yazmamızı sağlar.
+            if (textBox_Password.Text != textBox_PasswordAgain.Text)
+            {
+                MessageBox.Show("the passwords you entered are not the same");
+            }
         }
         private void button_SignUp_MouseHover(object sender, EventArgs e)
         {
@@ -601,12 +606,13 @@ namespace ALibrary
         #endregion
         //Listview>>events(itemChecked,SelectIndexChanged)
         #region
+       
         private void listView1_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             //pictureBox2.Visible = false;//list viewe tıklama yapma durumunda aktifleşir yani öğe seçilmesi gerekir.
             //pictureBox_Picture.Visible = true;
            // panel_AynurPanel.BackgroundImage = Properties.Resources.eng;
-            panel_AynurPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+           // pictureBox1.Image = System.Windows.Forms.ImageLayout.Stretch;
             ListViewItem myItem = null;
 
             foreach (ListViewItem item in listView1.Items)
@@ -620,38 +626,95 @@ namespace ALibrary
 
             if (myItem == null)
             {
-                panel_AynurPanel.BackgroundImage = null;
+                pictureBox1.Image = null;
                 return;
             }
 
+            System.Media.SoundPlayer sound = new System.Media.SoundPlayer();
 
             string str = myItem.Text.Trim();
             switch (str)
             {
                 case "English":
-                    panel_AynurPanel.BackgroundImage = Properties.Resources.eng;
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.eng;
+                    
                     break;
                 case "Turkish":
-                    panel_AynurPanel.BackgroundImage = Properties.Resources.turk;
+                    MessageBox.Show("How happy is the one who says I am a Turk");
+                    pictureBox1.Image = Properties.Resources.turk;
+
+                    sound.SoundLocation = "İstiklal Marşı.wav";
+                    sound.Play();
+                    
+                    break;
+              
+                case "Spanish":
+                    sound.Stop();
+                    pictureBox1.Image = Properties.Resources.ispan;
+                    break;
+                case "Danish":
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.dan;
+                    break;
+                case "Afghan":
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.afgan;
+                    break;
+                case "Albenian":
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.arn;
+                    break;
+                case "Argentine":
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.arj;
+                    break;
+                case "Australian":
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.australia_flag6;
+                    break;
+                case "Belarusian":
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.beyaz_rusya_bayragi_hareketli_resim_0013;
+                    break;
+                case "Belgian":
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.tenor;
+                    break;
+                case "Bolivian":
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.teennn;
+                    break;
+                case "Bosnian":
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.Bosnia_and_Herzegovina_240_animated_flag_gifs;
                     break;
                 default:
-                    panel_AynurPanel.BackgroundImage = null;
+                    sound.Stop();
+
+                    pictureBox1.Image = Properties.Resources.tenor__1_;
                     break;
-                    //}
+                    
 
             }
         }
 
             private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (listView1.SelectedItems[0].Text.Equals("English"))
-            //{
-            //   
-            //}
+          
+            pictureBox1.Image = Properties.Resources.tenor__1_;
 
-           // pictureBox2.Visible = false;
-
-            ;//seçilen öğenin değişmesi durumunda çalışır.
+            //seçilen öğenin değişmesi durumunda çalışır.
         }
 
         #endregion
@@ -992,7 +1055,21 @@ namespace ALibrary
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pictureBox_Picturee.Image = Properties.Resources.Books_2_icon;
+
+
+        }
+
+        private void button_PictureAdd_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("your picture has been registered, please enter your other information");
         }
     }
 

@@ -51,13 +51,11 @@ namespace ALibrary
             smtpClient.Credentials = loginInfo;
             smtpClient.Send(msg);
         }
-        private void message()
-        {
-
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Your password has been sent to your e-mail address :)");
             OpenConnection();
             username = textBox1.Text;
             string cmd = "SELECT * FROM LibraryUser WHERE (UserName = @UserName OR Gmail = @Gmail)";
@@ -92,6 +90,13 @@ namespace ALibrary
             {
                 connection.Open();
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

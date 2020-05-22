@@ -131,6 +131,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView_SignUp = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,8 +143,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox_Picturee = new System.Windows.Forms.PictureBox();
             this.textBox_PictureUrl = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel_AynurPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_BookNumber)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage_UserRegistration.SuspendLayout();
@@ -150,6 +150,7 @@
             this.tabPage_UserRegControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SignUp)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Picturee)).BeginInit();
@@ -499,6 +500,7 @@
             this.button_PictureAdd.TabIndex = 29;
             this.toolTip1.SetToolTip(this.button_PictureAdd, "save picture");
             this.button_PictureAdd.UseVisualStyleBackColor = true;
+            this.button_PictureAdd.Click += new System.EventHandler(this.button_PictureAdd_Click);
             // 
             // button3
             // 
@@ -511,6 +513,7 @@
             this.button3.TabIndex = 28;
             this.toolTip1.SetToolTip(this.button3, "delete picture");
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tabControl1
             // 
@@ -770,7 +773,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel_AynurPanel);
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.listView1);
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
@@ -780,14 +783,35 @@
             this.tabPage1.Text = "Nationality";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(750, 837);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(950, 608);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(271, 43);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Go to Homepage!";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1473, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1473, 24);
             this.menuStrip1.TabIndex = 27;
             // 
             // toolStripMenuItem1
@@ -795,7 +819,7 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(20, 40);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(20, 20);
             // 
             // toolStripMenuItem2
             // 
@@ -831,7 +855,7 @@
             // 
             // pictureBox_Picturee
             // 
-            this.pictureBox_Picturee.Location = new System.Drawing.Point(1140, 27);
+            this.pictureBox_Picturee.Location = new System.Drawing.Point(1140, 12);
             this.pictureBox_Picturee.Name = "pictureBox_Picturee";
             this.pictureBox_Picturee.Size = new System.Drawing.Size(310, 346);
             this.pictureBox_Picturee.TabIndex = 23;
@@ -840,29 +864,11 @@
             // 
             // textBox_PictureUrl
             // 
-            this.textBox_PictureUrl.Location = new System.Drawing.Point(95, 117);
+            this.textBox_PictureUrl.Location = new System.Drawing.Point(987, 300);
             this.textBox_PictureUrl.Name = "textBox_PictureUrl";
-            this.textBox_PictureUrl.Size = new System.Drawing.Size(100, 31);
+            this.textBox_PictureUrl.Size = new System.Drawing.Size(103, 31);
             this.textBox_PictureUrl.TabIndex = 31;
             this.textBox_PictureUrl.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(950, 608);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 55);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel_AynurPanel
-            // 
-            this.panel_AynurPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_AynurPanel.Location = new System.Drawing.Point(0, 0);
-            this.panel_AynurPanel.Name = "panel_AynurPanel";
-            this.panel_AynurPanel.Size = new System.Drawing.Size(750, 837);
-            this.panel_AynurPanel.TabIndex = 24;
             // 
             // SignUp
             // 
@@ -880,6 +886,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox_Picturee);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SignUp";
             this.Text = "SignUp";
@@ -893,6 +900,7 @@
             this.tabPage_UserRegControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SignUp)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -970,6 +978,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel_AynurPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -290,9 +305,6 @@
     <None Include="Resources\yildizlarin-sesi-3-stR6_cover.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tenor %281%29.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\yildizlarin-sesi-3-stR6_cover1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -339,9 +351,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DJ_Kedi_03_Muzikliste.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_wEDP487L67KGcalM_QCTeVDR6c.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Albania_240-animated-flag-gifs.gif" />
@@ -408,6 +417,28 @@
     <Content Include="Pictures\unnamed %281%29.jpg" />
     <Content Include="Pictures\unnamed.gif" />
     <Content Include="Pictures\unnamed.jpg" />
+    <None Include="Resources\Play-icon.png" />
+    <None Include="Resources\12123-eyes-icon.png" />
+    <None Include="Resources\teennn.gif" />
+    <None Include="Resources\tenor %281%29.gif" />
+    <None Include="Resources\Bosnia-and-Herzegovina_240-animated-flag-gifs.gif" />
+    <None Include="Resources\tenor.gif" />
+    <None Include="Resources\beyaz-rusya-bayragi-hareketli-resim-0013.gif" />
+    <None Include="Resources\australia_flag6.gif" />
+    <None Include="Resources\UcXQ.gif" />
+    <None Include="Resources\_wEDP487L67KGcalM_QCTeVDR6c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

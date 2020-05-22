@@ -63,6 +63,16 @@ namespace ALibrary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _12123_eyes_icon {
+            get {
+                object obj = ResourceManager.GetObject("12123-eyes-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2 {
             get {
                 object obj = ResourceManager.GetObject("2", resourceCulture);
@@ -233,6 +243,16 @@ namespace ALibrary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arj {
+            get {
+                object obj = ResourceManager.GetObject("arj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arn {
             get {
                 object obj = ResourceManager.GetObject("arn", resourceCulture);
@@ -253,9 +273,39 @@ namespace ALibrary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap australia_flag6 {
+            get {
+                object obj = ResourceManager.GetObject("australia_flag6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beyaz_rusya_bayragi_hareketli_resim_0013 {
+            get {
+                object obj = ResourceManager.GetObject("beyaz_rusya_bayragi_hareketli_resim_0013", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Books_2_icon {
             get {
                 object obj = ResourceManager.GetObject("Books-2-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bosnia_and_Herzegovina_240_animated_flag_gifs {
+            get {
+                object obj = ResourceManager.GetObject("Bosnia_and_Herzegovina_240_animated_flag_gifs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -664,6 +714,16 @@ namespace ALibrary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Play_icon {
+            get {
+                object obj = ResourceManager.GetObject("Play-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap poetry_comp {
             get {
                 object obj = ResourceManager.GetObject("poetry_comp", resourceCulture);
@@ -777,6 +837,26 @@ namespace ALibrary.Properties {
         internal static System.Drawing.Bitmap system_software_update_icon {
             get {
                 object obj = ResourceManager.GetObject("system-software-update-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap teennn {
+            get {
+                object obj = ResourceManager.GetObject("teennn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tenor {
+            get {
+                object obj = ResourceManager.GetObject("tenor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

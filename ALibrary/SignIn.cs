@@ -48,26 +48,44 @@ namespace ALibrary
         #endregion
         //textbox_Password properties
         #region
-        private void textBox_Password_Enter_1(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            if (textBox_Password.Text == "Password")
+            textbox_Password.Text = textBox2.Text;
+        }
+        private void button1_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox2.Show();
+        }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox2.Hide();
+        }
+
+        char? none = null;
+       
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if (textbox_Password.Text == "Password")
             {
-                textBox_Password.Text = "";
-                textBox_Password.ForeColor = Color.Black;
-                textBox_Password.PasswordChar = '*';
+                textBox2.Text = "";
+                textBox2.ForeColor = Color.Black;
+                textBox2.PasswordChar = '*';
 
             }
         }
-        char? none = null;
-        private void textBox_Password_Leave_1(object sender, EventArgs e)
+
+        private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (textBox_Password.Text == "")
+            if (textbox_Password.Text == "")
             {
-                textBox_Password.Text = "Password";
-                textBox_Password.PasswordChar = Convert.ToChar(none);
+                textBox2.Text = "Password";
+                textBox2.PasswordChar = Convert.ToChar(none);
             }
-            textBox_Password.ForeColor = Color.Silver;
+            textBox2.ForeColor = Color.Silver;
         }
+
         #endregion
         //button_Login properties
         #region
@@ -126,7 +144,7 @@ namespace ALibrary
         private void button_Login_Click_1(object sender, EventArgs e)
         {
             string UserName = textBox_UserName.Text.Trim();
-            string Password = textBox_Password.Text.Trim();
+            string Password = textbox_Password.Text.Trim();
             GetUser(UserName, Password);
 
 
@@ -154,7 +172,14 @@ namespace ALibrary
             signUp.Show();
             this.Hide();
         }
+
+
+
+
         #endregion
+
+     
+       
     }
 }
 

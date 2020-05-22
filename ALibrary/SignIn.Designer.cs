@@ -28,17 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignIn));
             this.linkLabel_Home = new System.Windows.Forms.LinkLabel();
             this.linkLabel_Password = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_Password = new System.Windows.Forms.TextBox();
             this.textBox_UserName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button_Login = new System.Windows.Forms.Button();
+            this.textbox_Password = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,16 +86,6 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Name = "label3";
             // 
-            // textBox_Password
-            // 
-            this.textBox_Password.BackColor = System.Drawing.Color.White;
-            this.textBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.textBox_Password, "textBox_Password");
-            this.textBox_Password.ForeColor = System.Drawing.Color.Silver;
-            this.textBox_Password.Name = "textBox_Password";
-            this.textBox_Password.Enter += new System.EventHandler(this.textBox_Password_Enter_1);
-            this.textBox_Password.Leave += new System.EventHandler(this.textBox_Password_Leave_1);
-            // 
             // textBox_UserName
             // 
             this.textBox_UserName.BackColor = System.Drawing.Color.White;
@@ -131,6 +125,30 @@
             this.button_Login.MouseLeave += new System.EventHandler(this.button_Login_MouseLeave_1);
             this.button_Login.MouseHover += new System.EventHandler(this.button_Login_MouseHover_1);
             // 
+            // textbox_Password
+            // 
+            this.textbox_Password.BackColor = System.Drawing.Color.White;
+            this.textbox_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.textbox_Password, "textbox_Password");
+            this.textbox_Password.ForeColor = System.Drawing.Color.Silver;
+            this.textbox_Password.Name = "textbox_Password";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.ForeColor = System.Drawing.Color.Silver;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ALibrary.Properties.Resources.DJ_Kedi_03_Muzikliste;
@@ -138,16 +156,27 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::ALibrary.Properties.Resources._12123_eyes_icon;
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.button1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
+            // 
             // SignIn
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textbox_Password);
             this.Controls.Add(this.linkLabel_Home);
             this.Controls.Add(this.linkLabel_Password);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox_Password);
             this.Controls.Add(this.textBox_UserName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -164,16 +193,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkLabel_Home;
         private System.Windows.Forms.LinkLabel linkLabel_Password;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_Password;
         private System.Windows.Forms.TextBox textBox_UserName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Login;
+        private System.Windows.Forms.TextBox textbox_Password;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
